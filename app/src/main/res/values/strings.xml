@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name"></string>
+    <string name="button1">NEXT</string>
+    <string name="pname">Product</string>
+    <string name="qty">Quantity</string>
+    <string name="price">Price</string>
+    <string name="item1">OUAI        body lotion</string>
+    <string name="qty1">1</string>
+    <string name="price1">LKR3000.00</string>
+    <string name="item2">ORIFLAME Hair oil</string>
+    <string name="qty2">1</string>
+    <string name="price2">LKR2500.00</string>
+    <string name="total1">"             Total Price  =  LKR5500.00"</string>
+    <string name="detailTopic">Please Enter your delivery details</string>
+    <string name="name1">Your Name</string>
+    <string name="phone">Recently using phone number</string>
+    <string name="address">Address</string>
+    <string name="city">City</string>
+    <string name="button2">NEXT</string>
+    <string name="name2">P.U.Aluvihare</string>
+    <string name="phone2">0764522516</string>
+    <string name="address2">No 980/4 Aluvihare,Matale</string>
+    <string name="city2">Sri Lanka</string>
+    <string name="button3">Confirm </string>
+    <string name="title1">Order Summery</string>
+    <string name="title2">Items</string>
+    <string name="subtot">Sub Total</string>
+    <string name="dech">delivery Charge</string>
+    <string name="price3">LKR5500.00</string>
+    <string name="price4">LKR 250.00</string>
+    <string name="total2">          Total price to be paid   =  LKR5750.00 </string>
+    <string name="button4">Confirm </string>
+    <string name="option_1">Edit</string>
+    <string name="option_2">Delete</string>
+    <string name="finalamount">LKR5750.00</string>
+    <string name="totalprice">Total price to be paid</string>
+    <string name="calculation">LKR5750.00</string>
+</resources>
