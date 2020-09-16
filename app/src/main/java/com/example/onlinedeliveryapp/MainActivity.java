@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
+
 public class MainActivity extends AppCompatActivity {
     Button button;
 
@@ -26,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
         button = findViewById(R.id.button1);
         button.setOnClickListener(v ->
                 startActivity(new Intent(MainActivity.this,DeliveryActivity.class)));
+
+
+
 
     }
 }

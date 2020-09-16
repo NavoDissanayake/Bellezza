@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "654438177133",
+    "firebase_url": "https://onlinecosmaticsdelivery.firebaseio.com",
+    "project_id": "onlinecosmaticsdelivery",
+    "storage_bucket": "onlinecosmaticsdelivery.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:654438177133:android:c6356e9df729c6e9e22264",
+        "android_client_info": {
+          "package_name": "com.example.onlinedeliveryapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "654438177133-efbv6jc7unp3hgbaormlaimovm8sshjs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.onlinedeliveryapp",
+            "certificate_hash": "241731346f2567f6ad2036002df7e17b43f62078"
+          }
+        },
+        {
+          "client_id": "654438177133-kvmajolrfsg1nd4l3tafmu7ekab1hu0k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDC0jR91an9RkL8PzosgfdMW3l8ykbuTYE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "654438177133-kvmajolrfsg1nd4l3tafmu7ekab1hu0k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

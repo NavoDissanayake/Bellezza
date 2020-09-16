@@ -13,31 +13,19 @@
 
         <activity android:name=".ConfirmOrderActivity"
                   android:parentActivityName=".ConfirmDetailsActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
 
         <activity android:name=".ConfirmDetailsActivity"
                    android:parentActivityName=".DeliveryActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
 
         <activity android:name=".DeliveryActivity"
                   android:parentActivityName=".MainActivity"  >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
 
