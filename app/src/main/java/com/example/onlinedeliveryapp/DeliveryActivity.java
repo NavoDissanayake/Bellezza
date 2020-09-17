@@ -127,7 +127,7 @@ public class DeliveryActivity extends AppCompatActivity {
     private void StoreProductInformation() {
 
         //loadingBar.setIcon(R.drawable.plus);
-        loadingBar.setTitle("Medicare");
+        loadingBar.setTitle("Bellezza");
         loadingBar.setMessage("Please Wait......");
         loadingBar.setCanceledOnTouchOutside(false);
         loadingBar.show();
