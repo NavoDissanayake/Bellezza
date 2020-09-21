@@ -78,6 +78,7 @@ public class DeliveryActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(DeliveryActivity.this, ConfirmDetailsActivity.class);
+                
                 startActivity(i);
             }
         });
@@ -155,7 +156,7 @@ public class DeliveryActivity extends AppCompatActivity {
         private void SaveProductInfoToDatabase ()
         {
             HashMap<String, Object> productMap = new HashMap<>();
-            
+
             productMap.put("DeliveryId", DeliveryRandomKey);
             productMap.put("date", saveCurrentdate);
             productMap.put("time", saveCurrentTime);
