@@ -155,11 +155,11 @@ public class DeliveryActivity extends AppCompatActivity {
         private void SaveProductInfoToDatabase ()
         {
             HashMap<String, Object> productMap = new HashMap<>();
+            
             productMap.put("DeliveryId", DeliveryRandomKey);
             productMap.put("date", saveCurrentdate);
             productMap.put("time", saveCurrentTime);
             productMap.put("CustomerName", Cname);
-
             productMap.put("PhoneNo", PhoneNo);
             productMap.put("Address", Address);
             productMap.put("City", City);
