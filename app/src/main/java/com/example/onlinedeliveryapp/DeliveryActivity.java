@@ -43,7 +43,7 @@ import java.util.HashMap;
 public class DeliveryActivity extends AppCompatActivity {
     private Button button;
     private EditText name2,phone2,addr2,city2;
-    private String Cname , PhoneNo,Address, City,saveCurrentdate,saveCurrentTime;
+    private String Cname , PhoneNo,Address, City,saveCurrentdate, saveCurrentTime;
 
 
     private String DeliveryRandomKey, downloadImageUrl;
@@ -51,12 +51,14 @@ public class DeliveryActivity extends AppCompatActivity {
     private DatabaseReference DeliveryRef;
     private ProgressDialog loadingBar;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivery);
 
-        DeliveryRef = FirebaseDatabase.getInstance().getReference().child("Delivery");
+
 
         button =(Button) findViewById(R.id.button2);
         name2 = (EditText) findViewById(R.id.name1);
@@ -126,62 +128,59 @@ public class DeliveryActivity extends AppCompatActivity {
 
     private void StoreProductInformation() {
 
+
+
+
         //loadingBar.setIcon(R.drawable.plus);
         loadingBar.setTitle("Bellezza");
         loadingBar.setMessage("Please Wait......");
         loadingBar.setCanceledOnTouchOutside(false);
         loadingBar.show();
 
-        Calendar calendar = Calendar.getInstance();
 
-        SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
-        saveCurrentdate = currentDate.format(calendar.getTime());
 
-        SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
-        saveCurrentTime = currentTime.format(calendar.getTime());
+            Calendar calendar = Calendar.getInstance();
 
-        DeliveryRandomKey = saveCurrentdate + saveCurrentTime;
+            SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
+            saveCurrentdate = currentDate.format(calendar.getTime());
 
-        SaveProductInfoToDatabase();
+            SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
+            saveCurrentTime = currentTime.format(calendar.getTime());
+
+            DeliveryRandomKey = saveCurrentdate + saveCurrentTime;
+
+            SaveProductInfoToDatabase();
+
+        }
+        private void SaveProductInfoToDatabase ()
+        {
+            HashMap<String, Object> productMap = new HashMap<>();
+            productMap.put("DeliveryId", DeliveryRandomKey);
+            productMap.put("date", saveCurrentdate);
+            productMap.put("time", saveCurrentTime);
+            productMap.put("CustomerName", Cname);
+
+            productMap.put("PhoneNo", PhoneNo);
+            productMap.put("Address", Address);
+            productMap.put("City", City);
+
+            DeliveryRef.child(DeliveryRandomKey).updateChildren(productMap)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
+                        @Override
+                        public void onComplete(@NonNull Task<Void> task) {
+                            if (task.isSuccessful()) {
+                                Intent intent1 = new Intent(DeliveryActivity.this, ConfirmDetailsActivity.class);
+                                startActivity(intent1);
+
+                                loadingBar.dismiss();
+                                Toast.makeText(DeliveryActivity.this, " Successfull..", Toast.LENGTH_SHORT).show();
+                            } else {
+                                loadingBar.dismiss();
+                                String message = task.getException().toString();
+                                Toast.makeText(DeliveryActivity.this, "Error: " + message, Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    });
+        }
 
     }
-
-
-    private void SaveProductInfoToDatabase()
-    {
-        HashMap<String, Object> productMap = new HashMap<>();
-        productMap.put("DeliveryId", DeliveryRandomKey);
-        productMap.put("date", saveCurrentdate);
-        productMap.put("time", saveCurrentTime);
-        productMap.put("CustomerName", Cname);
-
-        productMap.put("PhoneNo", PhoneNo);
-        productMap.put("Address", Address);
-        productMap.put("City", City);
-
-        DeliveryRef.child(DeliveryRandomKey).updateChildren(productMap)
-                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                    @Override
-                    public void onComplete(@NonNull Task<Void> task)
-                    {
-                        if (task.isSuccessful())
-                        {
-                            Intent intent1 = new Intent(DeliveryActivity.this, ConfirmDetailsActivity.class);
-                            startActivity(intent1);
-
-                            loadingBar.dismiss();
-                            Toast.makeText(DeliveryActivity.this, " Successfull..", Toast.LENGTH_SHORT).show();
-                        }
-                        else
-                        {
-                            loadingBar.dismiss();
-                            String message = task.getException().toString();
-                            Toast.makeText(DeliveryActivity.this, "Error: " + message, Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-
-
-
-    }
-}
