@@ -58,7 +58,7 @@ public class DeliveryActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_delivery);
 
-
+        DeliveryRef = FirebaseDatabase.getInstance().getReference().child("Delivery");
 
         button =(Button) findViewById(R.id.button2);
         name2 = (EditText) findViewById(R.id.name1);
