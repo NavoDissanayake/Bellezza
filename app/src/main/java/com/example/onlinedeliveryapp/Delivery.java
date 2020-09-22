@@ -4,7 +4,7 @@ public class Delivery {
 
 
     private String name;
-    private int phone;
+    private Integer phone;
     private String address;
     private String city;
 
@@ -21,16 +21,14 @@ public class Delivery {
         this.name = name;
     }
 
-    //phone number
-    public int getPhone() {
+    public Integer getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(Integer phone) {
         this.phone = phone;
     }
 
-    //address
     public String getAddress() {
         return address;
     }
@@ -40,7 +38,6 @@ public class Delivery {
     }
 
 
-    //city
     public String getCity() {
         return city;
     }
@@ -48,7 +45,6 @@ public class Delivery {
     public void setCity(String city) {
         this.city = city;
     }
-
 
 
 }
