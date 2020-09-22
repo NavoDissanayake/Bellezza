@@ -12,8 +12,6 @@ import android.widget.EditText;
 import android.widget.Toast;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.HashMap;
@@ -21,7 +19,7 @@ import java.util.HashMap;
 public class DeliveryActivity extends AppCompatActivity {
     private Button button;
     private EditText name2, phone2, addr2, city2;
-    private String saveCurrentdate, saveCurrentTime;
+    //private String saveCurrentdate, saveCurrentTime;
     private Delivery deliver;
     private DatabaseReference DeliveryRef;
 
@@ -111,8 +109,12 @@ public class DeliveryActivity extends AppCompatActivity {
 
     }
 
+}
 
-    private void StoreProductInformation() {
+
+
+
+   /* private void StoreProductInformation() {
 
 
         //loadingBar.setIcon(R.drawable.plus);
@@ -134,5 +136,4 @@ public class DeliveryActivity extends AppCompatActivity {
 
 
     }
-
-}
+*/
