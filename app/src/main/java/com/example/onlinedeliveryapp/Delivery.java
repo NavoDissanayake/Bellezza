@@ -4,7 +4,7 @@ public class Delivery {
 
 
     private String name;
-    private String phone;
+    private int phone;
     private String address;
     private String city;
 
@@ -22,11 +22,11 @@ public class Delivery {
     }
 
     //phone number
-    public String getPhone() {
+    public int getPhone() {
         return phone;
     }
 
-    public void setPhone(String phone) {
+    public void setPhone(int phone) {
         this.phone = phone;
     }
 
