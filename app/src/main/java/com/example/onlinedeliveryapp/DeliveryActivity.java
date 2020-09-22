@@ -45,14 +45,21 @@ public class DeliveryActivity extends AppCompatActivity {
     private EditText name2,phone2,addr2,city2;
     private String Cname , PhoneNo,Address, City,saveCurrentdate, saveCurrentTime;
     Delivery deliver;
-
+    private DatabaseReference DeliveryRef;
 
     private String DeliveryRandomKey, downloadImageUrl;
 
-    private DatabaseReference DeliveryRef;
+
     private ProgressDialog loadingBar;
 
+    private  void clearControls(){
 
+        name2.setText("");
+        phone2.setText("");
+        addr2.setText("");
+        city2.setText("");
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,42 +96,51 @@ public class DeliveryActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                ValidateProductData();
+
+                try {
+
+                    if (TextUtils.isEmpty(name2.getText().toString()))
+                        Toast.makeText(getApplicationContext(),"Please enter your name...", Toast.LENGTH_SHORT).show();
+                    else if (TextUtils.isEmpty(phone2.getText().toString()))
+                        Toast.makeText(getApplicationContext(),"Please enter your phone no...", Toast.LENGTH_SHORT).show();
+                    else if (TextUtils.isEmpty(addr2.getText().toString()))
+                        Toast.makeText(getApplicationContext(),"Please enter your address...", Toast.LENGTH_SHORT).show();
+                   else if (TextUtils.isEmpty(city2.getText().toString()))
+                        Toast.makeText(getApplicationContext(),"Please enter your city...", Toast.LENGTH_SHORT).show();
+                    else{
+
+                        deliver.setName(name2.getText().toString().trim());
+                        deliver.setPhone(Integer.parseInt(phone2.getText().toString().trim()));
+                        deliver.setAddress(addr2.getText().toString().trim());
+                        deliver.setCity(city2.getText().toString().trim());
+
+
+                        DeliveryRef.push().setValue(deliver);
+
+                        Toast.makeText(getApplicationContext(),"successfully inserted...", Toast.LENGTH_SHORT).show();
+                        clearControls();
+
+
+
+                    }
+
+                }
+                catch(NumberFormatException e){
+
+                    Toast.makeText(getApplicationContext(),"invalid contact number....", Toast.LENGTH_SHORT).show();
+
+                }
+
             }
         });
 
+        StoreProductInformation();
+
+
     }
 
 
-    private void ValidateProductData()
-    {
-        Cname = name2.getText().toString();
-        PhoneNo = phone2.getText().toString();
-        Address= addr2.getText().toString();
-        City=city2.getText().toString();
 
-
-        if (TextUtils.isEmpty(Cname))
-        {
-            Toast.makeText(this, "Please enter your name...", Toast.LENGTH_SHORT).show();
-        }
-        else if (TextUtils.isEmpty(PhoneNo))
-        {
-            Toast.makeText(this, "Please enter your phone no...", Toast.LENGTH_SHORT).show();
-        }
-        else if (TextUtils.isEmpty(Address))
-        {
-            Toast.makeText(this, "Please enter your address...", Toast.LENGTH_SHORT).show();
-        }
-        else if (TextUtils.isEmpty(City))
-        {
-            Toast.makeText(this, "Please enter your city...", Toast.LENGTH_SHORT).show();
-        }
-        else
-        {
-            StoreProductInformation();
-        }
-    }
 
 
 
@@ -151,10 +167,12 @@ public class DeliveryActivity extends AppCompatActivity {
 
             DeliveryRandomKey = saveCurrentdate + saveCurrentTime;
 
-            SaveProductInfoToDatabase();
+
 
         }
-        private void SaveProductInfoToDatabase ()
+
+
+    /*    private void SaveProductInfoToDatabase ()
         {
             HashMap<String, Object> productMap = new HashMap<>();
 
@@ -185,4 +203,6 @@ public class DeliveryActivity extends AppCompatActivity {
                     });
         }
 
+
+     */
     }
