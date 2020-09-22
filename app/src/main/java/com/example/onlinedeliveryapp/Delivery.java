@@ -21,14 +21,21 @@ public class Delivery {
         this.name = name;
     }
 
+
+    //phone number
     public Integer getPhone() {
         return phone;
     }
+
 
     public void setPhone(Integer phone) {
         this.phone = phone;
     }
 
+
+
+
+    //address
     public String getAddress() {
         return address;
     }
@@ -38,6 +45,8 @@ public class Delivery {
     }
 
 
+
+    //city
     public String getCity() {
         return city;
     }
