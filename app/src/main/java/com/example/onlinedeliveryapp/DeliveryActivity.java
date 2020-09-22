@@ -91,7 +91,7 @@ public class DeliveryActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "successfully inserted...", Toast.LENGTH_SHORT).show();
                         clearControls();
 
-                        StoreProductInformation();
+                        //StoreProductInformation();
 
                     }
 
@@ -115,7 +115,7 @@ public class DeliveryActivity extends AppCompatActivity {
     }
 
 
-    private void StoreProductInformation () {
+    /*private void StoreProductInformation () {
 
 
         //loadingBar.setIcon(R.drawable.plus);
@@ -134,8 +134,8 @@ public class DeliveryActivity extends AppCompatActivity {
         saveCurrentTime = currentTime.format(calendar.getTime());
 
         DeliveryRandomKey = saveCurrentdate + saveCurrentTime;
+ 
 
 
-    }
-
+ */
 }
