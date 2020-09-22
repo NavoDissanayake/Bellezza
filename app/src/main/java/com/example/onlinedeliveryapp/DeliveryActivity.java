@@ -91,6 +91,7 @@ public class DeliveryActivity extends AppCompatActivity {
                         Toast.makeText(getApplicationContext(), "successfully inserted...", Toast.LENGTH_SHORT).show();
                         clearControls();
 
+                        StoreProductInformation();
 
                     }
 
@@ -100,7 +101,7 @@ public class DeliveryActivity extends AppCompatActivity {
 
                 }
 
-                StoreProductInformation();
+
 
             }
 
