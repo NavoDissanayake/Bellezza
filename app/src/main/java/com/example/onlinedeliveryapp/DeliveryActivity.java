@@ -44,6 +44,7 @@ public class DeliveryActivity extends AppCompatActivity {
     private Button button;
     private EditText name2,phone2,addr2,city2;
     private String Cname , PhoneNo,Address, City,saveCurrentdate, saveCurrentTime;
+    Delivery deliver;
 
 
     private String DeliveryRandomKey, downloadImageUrl;
@@ -67,13 +68,13 @@ public class DeliveryActivity extends AppCompatActivity {
         city2 = (EditText) findViewById(R.id.city);
         loadingBar = new ProgressDialog(this);
 
+        deliver = new Delivery();
 
         //action bar
         setTitle("Delivery Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //next button
-
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
