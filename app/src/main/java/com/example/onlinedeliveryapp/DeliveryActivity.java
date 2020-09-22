@@ -66,7 +66,6 @@ public class DeliveryActivity extends AppCompatActivity {
 
                 startActivity(i);
 
-
                 DeliveryRef = FirebaseDatabase.getInstance().getReference().child("Delivery");
 
 
@@ -102,7 +101,6 @@ public class DeliveryActivity extends AppCompatActivity {
                 }
 
 
-
             }
 
 
@@ -111,11 +109,10 @@ public class DeliveryActivity extends AppCompatActivity {
         );
 
 
-
     }
 
 
-    /*private void StoreProductInformation () {
+    private void StoreProductInformation() {
 
 
         //loadingBar.setIcon(R.drawable.plus);
@@ -134,8 +131,8 @@ public class DeliveryActivity extends AppCompatActivity {
         saveCurrentTime = currentTime.format(calendar.getTime());
 
         DeliveryRandomKey = saveCurrentdate + saveCurrentTime;
- 
 
 
- */
+    }
+
 }
