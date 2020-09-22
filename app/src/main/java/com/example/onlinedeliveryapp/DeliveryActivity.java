@@ -60,57 +60,57 @@ public class DeliveryActivity extends AppCompatActivity {
 
         //next button
         button.setOnClickListener(new View.OnClickListener() {
-                                      @Override
-                                      public void onClick(View view) {
-                                          Intent i = new Intent(DeliveryActivity.this, ConfirmDetailsActivity.class);
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(DeliveryActivity.this, ConfirmDetailsActivity.class);
 
-                                          startActivity(i);
-
-
-                                          DeliveryRef = FirebaseDatabase.getInstance().getReference().child("Delivery");
+                startActivity(i);
 
 
-                                          try {
-
-                                              if (TextUtils.isEmpty(name2.getText().toString()))
-                                                  Toast.makeText(getApplicationContext(), "Please enter your name...", Toast.LENGTH_SHORT).show();
-                                              else if (TextUtils.isEmpty(addr2.getText().toString()))
-                                                  Toast.makeText(getApplicationContext(), "Please enter your address...", Toast.LENGTH_SHORT).show();
-                                              else if (TextUtils.isEmpty(city2.getText().toString()))
-                                                  Toast.makeText(getApplicationContext(), "Please enter your city...", Toast.LENGTH_SHORT).show();
-                                              else {
-
-                                                  deliver.setName(name2.getText().toString().trim());
-                                                  deliver.setPhone(Integer.parseInt(phone2.getText().toString().trim()));
-                                                  deliver.setAddress(addr2.getText().toString().trim());
-                                                  deliver.setCity(city2.getText().toString().trim());
+                DeliveryRef = FirebaseDatabase.getInstance().getReference().child("Delivery");
 
 
-                                                  DeliveryRef.push().setValue(deliver);
+                try {
 
-                                                  Toast.makeText(getApplicationContext(), "successfully inserted...", Toast.LENGTH_SHORT).show();
-                                                  clearControls();
+                    if (TextUtils.isEmpty(name2.getText().toString()))
+                        Toast.makeText(getApplicationContext(), "Please enter your name...", Toast.LENGTH_SHORT).show();
+                    else if (TextUtils.isEmpty(addr2.getText().toString()))
+                        Toast.makeText(getApplicationContext(), "Please enter your address...", Toast.LENGTH_SHORT).show();
+                    else if (TextUtils.isEmpty(city2.getText().toString()))
+                        Toast.makeText(getApplicationContext(), "Please enter your city...", Toast.LENGTH_SHORT).show();
+                    else {
 
-
-                                              }
-
-                                          } catch (NumberFormatException e) {
-
-                                              Toast.makeText(getApplicationContext(), "invalid contact number....", Toast.LENGTH_SHORT).show();
-
-                                          }
-
-                                          StoreProductInformation();
-
-                                      }
+                        deliver.setName(name2.getText().toString().trim());
+                        deliver.setPhone(Integer.parseInt(phone2.getText().toString().trim()));
+                        deliver.setAddress(addr2.getText().toString().trim());
+                        deliver.setCity(city2.getText().toString().trim());
 
 
-                                  }
+                        DeliveryRef.push().setValue(deliver);
+
+                        Toast.makeText(getApplicationContext(), "successfully inserted...", Toast.LENGTH_SHORT).show();
+                        clearControls();
+
+
+                    }
+
+                } catch (NumberFormatException e) {
+
+                    Toast.makeText(getApplicationContext(), "invalid contact number....", Toast.LENGTH_SHORT).show();
+
+                }
+
+                StoreProductInformation();
+
+            }
+
+
+        }
 
         );
 
 
-        
+
     }
 
 
