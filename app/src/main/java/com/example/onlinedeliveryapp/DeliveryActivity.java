@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.app.ProgressDialog;
+//import android.app.ProgressDialog;
 import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -17,14 +17,14 @@ import java.util.Calendar;
 import java.util.HashMap;
 
 public class DeliveryActivity extends AppCompatActivity {
-    private Button button;
-    private EditText name2, phone2, addr2, city2;
+    Button button;
+     EditText name2, phone2, addr2, city2;
     //private String saveCurrentdate, saveCurrentTime;
-    private Delivery deliver;
-    private DatabaseReference DeliveryRef;
+    Delivery deliver;
+    DatabaseReference DeliveryRef;
 
-    private String DeliveryRandomKey, downloadImageUrl;
-    private ProgressDialog loadingBar;
+    //private String DeliveryRandomKey, downloadImageUrl;
+    //private ProgressDialog loadingBar;
 
 
     private void clearControls() {
@@ -48,7 +48,7 @@ public class DeliveryActivity extends AppCompatActivity {
         phone2 = findViewById(R.id.phone);
         addr2 = findViewById(R.id.address);
         city2 = findViewById(R.id.city);
-        loadingBar = new ProgressDialog(this);
+        //loadingBar = new ProgressDialog(this);
 
         deliver = new Delivery();
 
