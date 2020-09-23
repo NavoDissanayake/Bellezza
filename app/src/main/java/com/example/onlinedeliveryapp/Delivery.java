@@ -12,13 +12,13 @@ public class Delivery {
 
     }
 
-    public Delivery(String name_2, Integer phone_2, String addr_2, String city_2) {
+    public Delivery(String name, Integer phone, String addr, String city) {
 
 
-        this.name=name_2;
-        this.phone = phone_2;
-        this.address= addr_2;
-        this.city=city_2;
+        this.name=name;
+        this.phone = phone;
+        this.address= addr;
+        this.city=city;
 
     }
 
