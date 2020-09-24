@@ -15,15 +15,12 @@ import com.google.firebase.database.FirebaseDatabase;
 
 
 
-
-
 public class DeliveryActivity extends AppCompatActivity {
 
 
 
    EditText name2, phone2, addr2, city2;
    Button addbtn;
-   //private String saveCurrentdate, saveCurrentTime;
    Delivery deliver;
    DatabaseReference DeliveryRef;
 
@@ -50,6 +47,7 @@ public class DeliveryActivity extends AppCompatActivity {
         //button
         addbtn= findViewById(R.id.button2);
 
+
         //new deliver object
         deliver = new Delivery();
 
@@ -59,6 +57,8 @@ public class DeliveryActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
+
+        //insert button
         addbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -113,7 +113,7 @@ public class DeliveryActivity extends AppCompatActivity {
 
 
 
-
+    //clear inputs
     private void clearControls() {
 
         name2.setText("");
@@ -126,7 +126,7 @@ public class DeliveryActivity extends AppCompatActivity {
 
 
 
-
+    //open next page
     private void OpenUi() {
 
 
