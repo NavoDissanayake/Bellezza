@@ -9,26 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
-
-        <activity android:name=".ConfirmOrderActivity"
-                  android:parentActivityName=".ConfirmDetailsActivity">
-
-        </activity>
-
-
-        <activity android:name=".ConfirmDetailsActivity"
-                   android:parentActivityName=".DeliveryActivity" >
-
-        </activity>
-
-
-        <activity android:name=".DeliveryActivity"
-                  android:parentActivityName=".MainActivity"  >
-
-        </activity>
-
-
+        <activity
+            android:name=".ConfirmOrderActivity"
+            android:parentActivityName=".ConfirmDetailsActivity"></activity>
+        <activity
+            android:name=".ConfirmDetailsActivity"
+            android:parentActivityName=".DeliveryActivity"></activity>
+        <activity
+            android:name=".DeliveryActivity"
+            android:parentActivityName=".MainActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -40,8 +29,6 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
-
     </application>
 
 </manifest>
