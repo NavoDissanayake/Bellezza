@@ -35,4 +35,7 @@
     <string name="finalamount">LKR5750.00</string>
     <string name="totalprice">Total price to be paid</string>
     <string name="calculation">LKR5750.00</string>
+    <string name="updatebtn">Update</string>
+    <string name="deletebtn">Delete</string>
+
 </resources>
