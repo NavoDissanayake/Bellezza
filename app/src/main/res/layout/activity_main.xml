@@ -1,41 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
 xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
-android:id="@+id/drawer_layout"
-android:fitsSystemWindows="true"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:background="#FFFFFF"
 tools:context=".MainActivity">
 
 
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:backgroundTint="#120606"
+        app:itemBackground="@color/design_default_color_background"
+        app:itemIconTint="@color/design_default_color_on_secondary"
+        app:itemTextColor="#0B0606"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:menu="@menu/bottom_nav_menu" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/button4"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.945" />
+
+    <EditText
+        android:id="@+id/txtPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.786" />
 
 
-//tool bar
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-<androidx.appcompat.widget.Toolbar
-     android:id="@+id/toolBar"
-    android:background="@color/colorPrimaryDark"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark"
-    android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
-    />
-
-</RelativeLayout>>
-
-
-<com.google.android.material.navigation.NavigationView
-     android:id="@+id/navigation_view"
-     app:menu="@menu/nav_menu"
-    android:layout_gravity="start"
-    android:layout_width="wrap_content"
-    android:layout_height="match_parent"
-    tools:ignore=",MissingClass,MissingConstraints"/>
-
-
-</androidx.drawerlayout.widget.DrawerLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,13 +11,21 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".ConfirmOrderActivity"
-            android:parentActivityName=".ConfirmDetailsActivity"></activity>
+            android:parentActivityName=".ConfirmDetailsActivity">
+
+        </activity>
         <activity
             android:name=".ConfirmDetailsActivity"
-            android:parentActivityName=".DeliveryActivity"></activity>
+            android:parentActivityName=".DeliveryActivity">
+
+
+        </activity>
         <activity
             android:name=".DeliveryActivity"
-            android:parentActivityName=".MainActivity"></activity>
+            android:parentActivityName=".MainActivity">
+
+
+        </activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
