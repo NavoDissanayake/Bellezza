@@ -1,18 +1,17 @@
 package com.example.onlinedeliveryapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.text.TextUtils;
 import android.widget.EditText;
 import android.widget.Toast;
+import android.app.ProgressDialog;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
-
 
 
 public class DeliveryActivity extends AppCompatActivity {
@@ -27,7 +26,7 @@ public class DeliveryActivity extends AppCompatActivity {
 
 
     //String DeliveryRandomKey, downloadImageUrl;
-    //private ProgressDialog loadingBar;
+    ProgressDialog loadingBar;
 
 
 
@@ -42,7 +41,7 @@ public class DeliveryActivity extends AppCompatActivity {
         phone2 = findViewById(R.id.phone);
         addr2 = findViewById(R.id.address);
         city2 = findViewById(R.id.city);
-        //loadingBar = new ProgressDialog(this);
+        loadingBar = new ProgressDialog(this);
 
         //button
         addbtn= findViewById(R.id.button2);
@@ -67,6 +66,7 @@ public class DeliveryActivity extends AppCompatActivity {
                 DeliveryRef = FirebaseDatabase.getInstance().getReference().child("Delivery");
 
 
+
                 try {
 
                     if (TextUtils.isEmpty(name2.getText().toString()))
@@ -78,6 +78,8 @@ public class DeliveryActivity extends AppCompatActivity {
                     else {
 
 
+
+
                         //  StoreDeliveryInformation();
 
                         deliver.setName(name2.getText().toString().trim());
@@ -87,7 +89,7 @@ public class DeliveryActivity extends AppCompatActivity {
 
 
                         //DeliveryRef.push().setValue(deliver);
-                        DeliveryRef.child("delivery1").setValue(deliver);
+                         DeliveryRef.child("delivery1").setValue(deliver);
 
 
                         Toast.makeText(getApplicationContext(), "successfully inserted...", Toast.LENGTH_SHORT).show();
@@ -132,44 +134,32 @@ public class DeliveryActivity extends AppCompatActivity {
 
         Intent intent = new Intent(this, ConfirmDetailsActivity.class);
         startActivity(intent);
+
+
+        StoreDeliveryInformation();
+
+
+
     }
 
 
 
+      //loading bar
+      private void StoreDeliveryInformation() {
+
+            //loadingBar.setIcon(R.drawable.plus);
+            loadingBar.setTitle("Bellezza");
+            loadingBar.setMessage("Please Wait......");
+            loadingBar.setCanceledOnTouchOutside(false);
+            loadingBar.show();
+
+
+
+
+        }
 
 
 }
-
-
-
-
-
-
-
-
-  /*  private void StoreDeliveryInformation() {
-
-        //loadingBar.setIcon(R.drawable.plus);
-        loadingBar.setTitle("Bellezza");
-        loadingBar.setMessage("Please Wait......");
-        loadingBar.setCanceledOnTouchOutside(false);
-        loadingBar.show();
-
-        Calendar calendar = Calendar.getInstance();
-
-        SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
-        saveCurrentdate = currentDate.format(calendar.getTime());
-
-        SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
-        saveCurrentTime = currentTime.format(calendar.getTime());
-
-        DeliveryRandomKey = saveCurrentdate + saveCurrentTime;
-
-
-    }
-*/
-
-
 
 
 

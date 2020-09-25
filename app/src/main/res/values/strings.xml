@@ -38,9 +38,9 @@
     <string name="updatebtn">Update</string>
     <string name="deletebtn">Delete</string>
 
-    <string name="home">LKR5750.00</string>
-    <string name="profile">Update</string>
-    <string name="cart">Delete</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="cart">Cart</string>
 
     <string name="draw_open">Delete</string>
     <string name="draw_close">Delete</string>

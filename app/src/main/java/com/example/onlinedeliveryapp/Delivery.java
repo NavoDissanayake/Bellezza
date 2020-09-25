@@ -8,6 +8,7 @@ public class Delivery {
     private String address;
     private String city;
 
+
     public Delivery() {
 
     }
@@ -19,6 +20,7 @@ public class Delivery {
         this.phone = phone;
         this.address= addr;
         this.city=city;
+
 
     }
 
@@ -64,6 +66,8 @@ public class Delivery {
     public void setCity(String city) {
         this.city = city;
     }
+
+
 
 
 }
