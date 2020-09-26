@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Admin</string>
+    <string name="name">Enter Name</string>
+    <array name="brand">
+        <item>"Oriflame"</item>
+        <item>"Fresh"</item>
+        <item>"Ponds"</item>
+        <item>"clinique"</item>
+        <item>"L'Oreal"</item>
+        <item>"Dove"</item>
+        <item>"RoC"</item>
+        <item>"Age_Smart"</item>
+    </array>
 </resources>
