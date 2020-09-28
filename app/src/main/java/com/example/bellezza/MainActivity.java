@@ -1,4 +1,4 @@
-package com.example.onlinedeliveryapp;
+package com.example.bellezza;
 
 import android.content.Intent;
 import android.os.Bundle;
