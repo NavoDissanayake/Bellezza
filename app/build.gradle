@@ -7,7 +7,7 @@ android {
     buildToolsVersion "30.0.1"
 
     defaultConfig {
-        applicationId "com.example.onlinedeliveryapp"
+        applicationId "com.example.bellezza"
         minSdkVersion 19
         targetSdkVersion 29
         versionCode 1
