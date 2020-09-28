@@ -9,7 +9,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="all_products"
+        android:text="All Products"
         android:textColor="#0C0000"
         android:textSize="18sp"
         android:textStyle="bold"

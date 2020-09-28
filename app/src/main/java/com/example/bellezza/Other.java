@@ -1,4 +1,4 @@
-package com.Bellezza.Admin;
+package com.example.bellezza;
 
 import androidx.appcompat.app.AppCompatActivity;
 

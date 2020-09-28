@@ -1,4 +1,4 @@
-package com.Bellezza.Admin;
+package com.example.bellezza;
 
 import org.junit.Test;
 

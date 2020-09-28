@@ -1,4 +1,4 @@
-package com.Bellezza.Admin;
+package com.example.bellezza;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,11 +21,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
 import java.util.List;
 
-public class AllFace extends AppCompatActivity {
+public class AddFace extends AppCompatActivity {
 
     EditText AddName,AddDesc,AddPrice,AddDate;
+    Button btnAdd;
     Spinner spinnerBrands;
 
     DatabaseReference dbRef;
@@ -35,20 +37,50 @@ public class AllFace extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_all_face);
+        setContentView(R.layout.activity_add_face);
 
-        listViewFace.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        //add back button
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //action bar
+        setTitle("Add Face Products.. ");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+
+        dbRef = FirebaseDatabase.getInstance().getReference("faces");
+
+
+        AddName = (EditText) findViewById(R.id.face_name);
+        AddDesc = (EditText) findViewById(R.id.face_des);
+        AddPrice=(EditText) findViewById(R.id.face_price);
+        AddDate=(EditText) findViewById(R.id.date);
+        btnAdd = (Button)findViewById(R.id.btnAdd);
+        spinnerBrands=(Spinner)findViewById(R.id.spinnerBrands);
+
+        listViewFace=(ListView)findViewById(R.id.listViewFace);
+        faceList= new ArrayList<>();
+
+        btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onClick(View v) {
+                addFace();
 
-                Face face = faceList.get(position);
-                showUpdateDialog(face.getFaceId(), face.getFaceName());
-
-                return false;
             }
         });
+    listViewFace.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+        @Override
+        public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
 
-    }
+            Face face= faceList.get(position);
+            showUpdateDialog(face.getFaceId(), face.getFaceName(),face.getFaceDesc(),face.getFacePrice(),face.getFaceDate());
+
+            return false;
+        }
+    });
+
+}
+
     @Override
     protected void onStart() {
         //attaching value
@@ -65,22 +97,17 @@ public class AllFace extends AppCompatActivity {
 
                 }
 
+                FaceList adapter = new FaceList(AddFace.this, faceList);
+                listViewFace.setAdapter(adapter);
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
-
         });
-            FaceList adapter = new FaceList(AllFace.this, faceList);
-                listViewFace.setAdapter(adapter);
-        }
-
-
-
-
-    private void showUpdateDialog(final String faceId , String FaceName){
+    }
+    private void showUpdateDialog(final String faceId , String FaceName,String FaceDesc,String FacePrice,String FaceDate){
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
 
@@ -90,9 +117,8 @@ public class AllFace extends AppCompatActivity {
 
 
         final EditText AddName=(EditText)dialogView.findViewById(R.id.face_name);
-        final EditText AddDesc = (EditText)dialogView.findViewById(R.id.face_des);
-        final EditText AddPrice = (EditText)dialogView.findViewById(R.id.face_price);
-        final EditText AddDate = (EditText)dialogView.findViewById(R.id.date);
+        final EditText AddDesc=(EditText)dialogView.findViewById(R.id.face_des);
+        final EditText AddPrice=(EditText)dialogView.findViewById(R.id.face_price);
         final Button buttonUpdate = (Button)dialogView.findViewById(R.id.buttonUpdate);
         final Spinner spinnerBrands = (Spinner)dialogView.findViewById(R.id.spinnerBrands) ;
         final Button buttonDelete = (Button)dialogView.findViewById(R.id.buttonDelete);
@@ -106,9 +132,10 @@ public class AllFace extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String name = AddName.getText().toString().trim();
-                String desc=AddDesc.getText().toString().trim();
-                String price =AddPrice.getText().toString().trim();
-                String date=AddDate.getText().toString().trim();
+                String desc = AddDesc.getText().toString().trim();
+                String price = AddPrice.getText().toString().trim();
+                String date = AddDate.getText().toString().trim();
+
                 String brands=spinnerBrands.getSelectedItem().toString();
 
                 if (TextUtils.isEmpty(name)){
@@ -142,7 +169,6 @@ public class AllFace extends AppCompatActivity {
 
     private boolean updateFace(String id,String name,String brands,String desc,String price,String date){
         DatabaseReference databaseReference=FirebaseDatabase.getInstance().getReference("faces").child(id);
-
         Face face = new Face(id,name,brands,desc,price,date);
         databaseReference.setValue(face);
 
@@ -151,4 +177,37 @@ public class AllFace extends AppCompatActivity {
 
     }
 
+    //saving Face Product Data to the database
+    private void addFace(){
+        //getting the values to save
+
+        String name = AddName.getText().toString().trim();
+        String brands= spinnerBrands.getSelectedItem().toString();
+        String desc =AddDesc.getText().toString().trim();
+        String price =AddPrice.getText().toString().trim();
+        String date =AddPrice.getText().toString().trim();
+
+        //checking
+        if (!TextUtils.isEmpty(name)){
+
+            //getting the unique id using push().getKey() method
+            //it create Id As a primary key
+            String id= dbRef.push().getKey();
+
+            //creating an face object
+            Face face = new Face(id, name ,brands,desc,price,date);
+
+            //saving face
+            dbRef.child(id).setValue(face);
+
+            //displaying Success toast
+            Toast.makeText(this,"Product Added",Toast.LENGTH_SHORT).show();
+
+
+        }else{
+            //if the value is not given displaying toast
+            Toast.makeText(this,"You Should Enter Name",Toast.LENGTH_SHORT).show();;
+        }
+
+    }
 }

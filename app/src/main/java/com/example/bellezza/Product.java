@@ -1,4 +1,4 @@
-package com.Bellezza.Admin;
+package com.example.bellezza;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;

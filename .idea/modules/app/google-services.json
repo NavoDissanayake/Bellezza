@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "917922330206-6jm85csqjmagh48cf8e7ck502tf1bo5r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bellezza",
+            "certificate_hash": "86ce1aade4a42f0fa408a8c5c861fd1d247a8262"
+          }
+        },
+        {
           "client_id": "917922330206-a0huouum6qsj9erel6h2ptcevifho69v.apps.googleusercontent.com",
           "client_type": 3
         }

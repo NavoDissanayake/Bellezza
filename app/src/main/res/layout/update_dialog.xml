@@ -1,63 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <EditText
-        android:id="@+id/editTextName"
-        android:layout_width="352dp"
-        android:layout_height="62dp"
+        android:id="@+id/face_name"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
         android:ems="10"
         android:hint="Enter New Name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.576"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.122" />
 
 
+    <EditText
+        android:id="@+id/face_des"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:hint="Enter New Description"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerBrands"
+        app:layout_constraintVertical_bias="0.025" />
+
+    <EditText
+        android:id="@+id/face_price"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:hint="Enter New price"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/face_des"
+        app:layout_constraintVertical_bias="0.025" />
+
+    <EditText
+        android:id="@+id/face_price2"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:ems="10"
+        android:hint="Enter New Date"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/face_price"
+        app:layout_constraintVertical_bias="0.019" />
 
     <Spinner
         android:id="@+id/spinnerBrands"
-        android:layout_width="344dp"
+        android:layout_width="300dp"
         android:layout_height="27dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="12dp"
         android:entries="@array/brand"
-        app:layout_constraintBottom_toTopOf="@+id/buttonUpdate"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.63"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextName"
-        app:layout_constraintVertical_bias="0.629" />
+        app:layout_constraintTop_toBottomOf="@+id/face_name"
+        app:layout_constraintVertical_bias="0.0" />
+
     <Button
         android:id="@+id/buttonUpdate"
-        android:layout_width="335dp"
+        android:layout_width="300dp"
         android:layout_height="48dp"
+        android:background="@drawable/image_corner"
         android:text="Update"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.313" />
+        app:layout_constraintTop_toBottomOf="@+id/face_price2"
+        app:layout_constraintVertical_bias="0.141" />
 
     <Button
         android:id="@+id/buttonDelete"
-        android:layout_width="335dp"
+        android:layout_width="300dp"
         android:layout_height="48dp"
+        android:background="@drawable/image_corner"
+        android:backgroundTint="@android:color/holo_red_dark"
         android:text="Delete"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.552"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.398" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonUpdate"
+        app:layout_constraintVertical_bias="0.192" />
 </androidx.constraintlayout.widget.ConstraintLayout>

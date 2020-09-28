@@ -10,7 +10,7 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="welcome_administrator"
+        android:text="Welcome Administrator"
         android:textColor="#020202"
         android:textColorHint="#1E1616"
         android:textDirection="inherit"

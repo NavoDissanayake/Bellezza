@@ -1,4 +1,4 @@
-package com.Bellezza.Admin;
+package com.example.bellezza;
 
 public class Face {
 

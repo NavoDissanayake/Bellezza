@@ -7,83 +7,95 @@
     tools:context=".AddFace">
 
 
+    <ListView
+        android:id="@+id/listViewFace"
+        android:layout_width="386dp"
+        android:layout_height="321dp"
+        android:layout_marginTop="14dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.581"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date"
+        app:layout_constraintVertical_bias="1.0" />
+
+
     <EditText
         android:id="@+id/face_name"
-        android:layout_width="370dp"
+        android:layout_width="380dp"
         android:layout_height="55dp"
         android:background="@drawable/image_corner"
         android:elevation="25dp"
         android:ems="10"
-        android:hint="Enter Name Here"
+        android:hint="   Enter Name Here"
         android:inputType="textPersonName"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/spinnerBrands"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.165" />
+        app:layout_constraintVertical_bias="0.571" />
 
     <Spinner
         android:id="@+id/spinnerBrands"
-        android:layout_width="367dp"
-        android:layout_height="58dp"
+        android:layout_width="380dp"
+        android:layout_height="34dp"
         android:entries="@array/brand"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/face_des"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.636"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.312" />
+        app:layout_constraintVertical_bias="0.897" />
 
     <EditText
         android:id="@+id/face_des"
-        android:layout_width="370dp"
+        android:layout_width="380dp"
         android:layout_height="55dp"
         android:background="@drawable/image_corner"
         android:elevation="25dp"
         android:ems="10"
-        android:hint="Enter Description"
+        android:hint="   Enter Description"
         android:inputType="textMultiLine"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/face_price"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.609"
+        app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.482" />
+        app:layout_constraintVertical_bias="0.841" />
 
     <EditText
         android:id="@+id/face_price"
-        android:layout_width="370dp"
+        android:layout_width="380dp"
         android:layout_height="55dp"
         android:background="@drawable/image_corner"
         android:elevation="25dp"
         android:ems="10"
-        android:hint="Enter Price..."
+        android:hint="   Enter Price..."
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.658"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.662" />
+        app:layout_constraintVertical_bias="0.325" />
 
     <EditText
         android:id="@+id/date"
-        android:layout_width="200dp"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:background="@drawable/image_corner"
         android:elevation="25dp"
-        android:hint="Enter Date..."
+        android:hint="   Enter Date..."
         android:padding="15dp"
         android:textColor="#897"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.127"
+        app:layout_constraintHorizontal_bias="0.135"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.806" />
-
+        app:layout_constraintTop_toBottomOf="@+id/face_price"
+        app:layout_constraintVertical_bias="0.028" />
 
     <Button
         android:id="@+id/btnAdd"
@@ -96,23 +108,9 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.882"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.836"
+        app:layout_constraintStart_toEndOf="@+id/date"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.915" />
-
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/image_corner"
-        android:elevation="25dp"
-        android:text="@android:string/cancel"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.154"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.916" />
+        app:layout_constraintVertical_bias="0.518" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
