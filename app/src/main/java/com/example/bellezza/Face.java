@@ -10,6 +10,7 @@ public class Face {
     String faceDate;
 
 
+
     public Face(){
 
     }
@@ -21,21 +22,26 @@ public class Face {
         this.faceDesc = faceDesc;
         this.facePrice = facePrice;
         this.faceDate = faceDate;
+
     }
 
-    public String getFaceId() {
+    public String getFaceId()
+    {
         return faceId;
     }
 
-    public String getFaceName() {
+    public String getFaceName()
+    {
         return faceName;
     }
 
-    public String getFaceBrand() {
+    public String getFaceBrand()
+    {
         return faceBrand;
     }
 
-    public String getFaceDesc() {
+    public String getFaceDesc()
+    {
         return faceDesc;
     }
 
@@ -43,7 +49,9 @@ public class Face {
         return facePrice;
     }
 
-    public String getFaceDate() {
+    public String getFaceDate()
+    {
         return faceDate;
     }
+
 }
