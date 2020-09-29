@@ -31,7 +31,7 @@ public class Product extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 =new Intent(Product.this,MainActivity.class);
+                Intent intent1 =new Intent(Product.this, Admin.class);
                 startActivity(intent1);
 
                 //Add Toast

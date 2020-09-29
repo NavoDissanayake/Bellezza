@@ -9,16 +9,15 @@
 
     <ListView
         android:id="@+id/listViewFace"
-        android:layout_width="386dp"
-        android:layout_height="321dp"
+        android:layout_width="408dp"
+        android:layout_height="118dp"
         android:layout_marginTop="14dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.581"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
-
 
     <EditText
         android:id="@+id/face_name"
@@ -31,10 +30,10 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/spinnerBrands"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.741"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.571" />
+        app:layout_constraintVertical_bias="0.917" />
 
     <Spinner
         android:id="@+id/spinnerBrands"
@@ -43,10 +42,10 @@
         android:entries="@array/brand"
         app:layout_constraintBottom_toTopOf="@+id/face_des"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.486"
+        app:layout_constraintHorizontal_bias="0.741"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.897" />
+        app:layout_constraintVertical_bias="0.951" />
 
     <EditText
         android:id="@+id/face_des"
@@ -59,10 +58,10 @@
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toTopOf="@+id/face_price"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintHorizontal_bias="0.741"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.841" />
+        app:layout_constraintVertical_bias="0.905" />
 
     <EditText
         android:id="@+id/face_price"
@@ -75,10 +74,10 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.516"
+        app:layout_constraintHorizontal_bias="0.741"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.325" />
+        app:layout_constraintVertical_bias="0.603" />
 
     <EditText
         android:id="@+id/date"
@@ -92,10 +91,10 @@
         android:textColor="#897"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintHorizontal_bias="0.207"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/face_price"
-        app:layout_constraintVertical_bias="0.028" />
+        app:layout_constraintVertical_bias="0.163" />
 
     <Button
         android:id="@+id/btnAdd"
@@ -108,9 +107,20 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.836"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/date"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.518" />
+        app:layout_constraintVertical_bias="0.729" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="303dp"
+        android:layout_height="154dp"
+        app:layout_constraintBottom_toTopOf="@+id/face_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.355"
+        app:srcCompat="@drawable/ic_launcher_foreground" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

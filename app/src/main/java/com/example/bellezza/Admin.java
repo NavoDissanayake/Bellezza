@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class Admin extends AppCompatActivity {
 
 
     @Override
@@ -33,11 +33,11 @@ public class MainActivity extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 =new Intent(MainActivity.this,Product.class);
+                Intent intent1 =new Intent(Admin.this,Product.class);
                 startActivity(intent1);
 
                 //Add Toast
-                Toast.makeText(MainActivity.this, "Open Product...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Admin.this, "Open Product...", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -48,11 +48,11 @@ public class MainActivity extends AppCompatActivity {
         button2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent2 =new Intent(MainActivity.this,Other.class);
+                Intent intent2 =new Intent(Admin.this,Other.class);
                 startActivity(intent2);
 
                 //Add Toast
-                Toast.makeText(MainActivity.this, "Loading Other...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Admin.this, "Loading Other...", Toast.LENGTH_SHORT).show();
 
             }
         });
