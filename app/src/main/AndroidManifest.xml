@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.onlinedeliveryapp">
+    package="com.example.bellezza">
 
     <application
         android:allowBackup="true"
@@ -10,23 +10,23 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ConfirmOrderActivity"
-            android:parentActivityName=".ConfirmDetailsActivity">
+            android:name="com.example.bellezza.ConfirmOrderActivity"
+            android:parentActivityName="com.example.bellezza.ConfirmDetailsActivity">
 
         </activity>
         <activity
-            android:name=".ConfirmDetailsActivity"
-            android:parentActivityName=".DeliveryActivity">
+            android:name="com.example.bellezza.ConfirmDetailsActivity"
+            android:parentActivityName="com.example.bellezza.DeliveryActivity">
 
 
         </activity>
         <activity
-            android:name=".DeliveryActivity"
-            android:parentActivityName=".MainActivity">
+            android:name="com.example.bellezza.DeliveryActivity"
+            android:parentActivityName="com.example.bellezza.MainActivity">
 
 
         </activity>
-        <activity android:name=".MainActivity">
+        <activity android:name="com.example.bellezza.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

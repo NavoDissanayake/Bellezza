@@ -1,5 +1,7 @@
-package com.example.onlinedeliveryapp;
+package com.example.bellezza;
 
+
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -7,23 +9,24 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
-import android.app.ProgressDialog;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-
+//import java.text.SimpleDateFormat;
+//import java.util.Calendar;
 public class DeliveryActivity extends AppCompatActivity {
 
 
 
-   EditText name2, phone2, addr2, city2;
-   Button addbtn;
-   Delivery deliver;
-   DatabaseReference DeliveryRef;
-
-
+    EditText name2, phone2, addr2, city2;
+    Button addbtn;
+    Delivery deliver;
+    DatabaseReference DeliveryRef;
+   // String saveCurrentdate,saveCurrentTime;
+   // String DeliveryRandomKey;
 
     //String DeliveryRandomKey, downloadImageUrl;
     ProgressDialog loadingBar;
@@ -86,11 +89,12 @@ public class DeliveryActivity extends AppCompatActivity {
                         deliver.setPhone(Integer.parseInt(phone2.getText().toString().trim()));
                         deliver.setAddress(addr2.getText().toString().trim());
                         deliver.setCity(city2.getText().toString().trim());
-
+                       // deliver.setDate(saveCurrentdate);
+                       // deliver.setTime(saveCurrentTime);
 
                         //DeliveryRef.push().setValue(deliver);
-                         DeliveryRef.child("delivery1").setValue(deliver);
-
+                        DeliveryRef.child("delivery1").setValue(deliver);
+                        //DeliveryRef.setValue(deliver);
 
                         Toast.makeText(getApplicationContext(), "successfully inserted...", Toast.LENGTH_SHORT).show();
                         clearControls();
@@ -144,26 +148,19 @@ public class DeliveryActivity extends AppCompatActivity {
 
 
 
-      //loading bar
-      private void StoreDeliveryInformation() {
+    //loading bar
+    private void StoreDeliveryInformation(){
 
-            //loadingBar.setIcon(R.drawable.plus);
-            loadingBar.setTitle("Bellezza");
-            loadingBar.setMessage("Please Wait......");
-            loadingBar.setCanceledOnTouchOutside(false);
-            loadingBar.show();
-
-
+        //loadingBar.setIcon(R.drawable.plus);
+        loadingBar.setTitle("Bellezza");
+        loadingBar.setMessage("Please Wait......");
+        loadingBar.setCanceledOnTouchOutside(false);
+        loadingBar.show();
 
 
-        }
+
+
+    }
 
 
 }
-
-
-
-
-
-
-

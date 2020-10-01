@@ -1,4 +1,4 @@
-package com.example.onlinedeliveryapp;
+package com.example.bellezza;
 
 public class Delivery {
 
@@ -35,9 +35,9 @@ public class Delivery {
 
 
     //phone number
-    public Integer getPhone() {
-        return phone;
-    }
+    //public static Integer getPhone() {
+     //   return phone;
+    //}
 
 
     public void setPhone(Integer phone) {
@@ -66,8 +66,6 @@ public class Delivery {
     public void setCity(String city) {
         this.city = city;
     }
-
-
 
 
 }

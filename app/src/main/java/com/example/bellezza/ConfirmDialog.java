@@ -1,4 +1,4 @@
-package com.example.onlinedeliveryapp;
+package com.example.bellezza;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

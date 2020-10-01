@@ -1,4 +1,4 @@
-package com.example.onlinedeliveryapp;
+package com.example.bellezza;
 
 import org.junit.Test;
 
