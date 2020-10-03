@@ -1,42 +1,34 @@
 {
   "project_info": {
-    "project_number": "740914098328",
-    "firebase_url": "https://onlinedeliveryapp-50ee7.firebaseio.com",
-    "project_id": "onlinedeliveryapp-50ee7",
-    "storage_bucket": "onlinedeliveryapp-50ee7.appspot.com"
+    "project_number": "658852950259",
+    "firebase_url": "https://bellezza-7faa4.firebaseio.com",
+    "project_id": "bellezza-7faa4",
+    "storage_bucket": "bellezza-7faa4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:740914098328:android:3fc3c1d59301975698e0ed",
+        "mobilesdk_app_id": "1:658852950259:android:c6b4103bff9d081d310786",
         "android_client_info": {
-          "package_name": "com.example.onlinedeliveryapp"
+          "package_name": "com.example.bellezza"
         }
       },
       "oauth_client": [
         {
-          "client_id": "740914098328-41vqinmeeel05chn7gjoep44fvh6rbmb.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.example.onlinedeliveryapp",
-            "certificate_hash": "241731346f2567f6ad2036002df7e17b43f62078"
-          }
-        },
-        {
-          "client_id": "740914098328-1ika93np3oklg5o3vlee7j4p0t4odpnc.apps.googleusercontent.com",
+          "client_id": "658852950259-3mngsmuea8fogtse81urn52o3qfl26ac.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDbRzegViVaEFsSjLAuSKzKsGLOY9NkHtA"
+          "current_key": "AIzaSyBgW-Ha7TfutyQFQVZfRIH4FyIgPXxojcY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "740914098328-1ika93np3oklg5o3vlee7j4p0t4odpnc.apps.googleusercontent.com",
+              "client_id": "658852950259-3mngsmuea8fogtse81urn52o3qfl26ac.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

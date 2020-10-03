@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@drawable/back2"
     tools:context=".DeliveryActivity">
 
 
@@ -26,6 +26,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.055" />
 
+
     <Button
         android:id="@+id/button2"
         android:layout_width="299dp"
@@ -41,8 +42,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.88"
-       />
+        app:layout_constraintVertical_bias="0.943" />
 
     <EditText
         android:id="@+id/phone"
@@ -60,6 +60,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.52"
+
         tools:ignore="LabelFor" />
 
     <EditText
@@ -117,32 +118,5 @@
         app:layout_constraintVertical_bias="0.725"
         tools:ignore="LabelFor" />
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="197dp"
-        android:layout_height="143dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.163"
-        app:srcCompat="@drawable/delivery" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:backgroundTint="#120606"
-        app:itemBackground="@color/design_default_color_background"
-        app:itemIconTint="@color/design_default_color_on_secondary"
-        app:itemTextColor="#0B0606"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
-        app:menu="@menu/bottom_nav_menu" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "917922330206",
-    "firebase_url": "https://bellezza-cfc32.firebaseio.com",
-    "project_id": "bellezza-cfc32",
-    "storage_bucket": "bellezza-cfc32.appspot.com"
+    "project_number": "658852950259",
+    "firebase_url": "https://bellezza-7faa4.firebaseio.com",
+    "project_id": "bellezza-7faa4",
+    "storage_bucket": "bellezza-7faa4.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:917922330206:android:80c48abc0a672a149d66cf",
+        "mobilesdk_app_id": "1:658852950259:android:c6b4103bff9d081d310786",
         "android_client_info": {
           "package_name": "com.example.bellezza"
         }
       },
       "oauth_client": [
         {
-          "client_id": "917922330206-a0huouum6qsj9erel6h2ptcevifho69v.apps.googleusercontent.com",
+          "client_id": "658852950259-3mngsmuea8fogtse81urn52o3qfl26ac.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCrG6Wpfw66QKc8Gyn6oLGq8PDz9F1RN7I"
+          "current_key": "AIzaSyBgW-Ha7TfutyQFQVZfRIH4FyIgPXxojcY"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "917922330206-a0huouum6qsj9erel6h2ptcevifho69v.apps.googleusercontent.com",
+              "client_id": "658852950259-3mngsmuea8fogtse81urn52o3qfl26ac.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

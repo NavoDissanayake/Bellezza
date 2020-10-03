@@ -23,10 +23,11 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
     private Button Confirmbutton,updtebutton,delbutton;
     private Button btn;
     private EditText name3, phone3, address3, city3;
-    //private String iname,iphone,iaddress,icity;
     private DataSnapshot dataSnapshot;
     DatabaseReference DeliveryRef;
     Delivery deliver;
+
+
 
 
     @Override
@@ -64,13 +65,18 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
         setTitle("Confirm Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Delivery").child("delivery1");
 
+
+
+
+
+        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Delivery").child("996450325V");
 
         readRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.hasChildren()) {
+
                     name3.setText(dataSnapshot.child("name").getValue().toString());
                     phone3.setText(dataSnapshot.child("phone").getValue().toString());
                     address3.setText(dataSnapshot.child("address").getValue().toString());
@@ -100,22 +106,32 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
         });
 
 
+       //update details
         updtebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DatabaseReference updRef = FirebaseDatabase.getInstance().getReference().child("Delivery").child("delivery1");
+
+
+                DatabaseReference updRef = FirebaseDatabase.getInstance().getReference().child("Delivery");
                 updRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.hasChildren()){
+                        if(dataSnapshot.hasChild("996450325V")){
+
+
                             try{
+
+
+
                                 deliver.setName(name3.getText().toString().trim());
-                                deliver.setPhone(Integer.parseInt(phone3.getText().toString().trim()));
+                                deliver.setPhone(phone3.getText().toString().trim());
                                 deliver.setAddress(address3.getText().toString().trim());
                                 deliver.setCity(city3.getText().toString().trim());
 
 
-                               DeliveryRef = FirebaseDatabase.getInstance().getReference().child("Delivery").child("delivery1");
+
+                                DeliveryRef = FirebaseDatabase.getInstance().getReference().child("Delivery").child("996450325V");
+
 
                                 DeliveryRef.setValue(deliver);
 
@@ -149,11 +165,11 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
                 delRef.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.hasChild("delivery1")){
+                        if(dataSnapshot.hasChildren()){
 
                             DeliveryRef = FirebaseDatabase.getInstance().getReference().child("Delivery").child("delivery1");
                             DeliveryRef.removeValue();
-                            clearControls();
+                           // clearControls();
                             Toast.makeText(getApplicationContext(),"Data Deleted Successfully",Toast.LENGTH_SHORT).show();
                         }
                         else
@@ -167,19 +183,21 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
                 });
             }
         });
+
+
+
     }
 
 
+ //   private void clearControls() {
 
-    private void clearControls() {
 
+  //      name3.setText("");
+  //      phone3.setText("");
+  //      address3.setText("");
+  //      city3.setText("");
 
-        name3.setText("");
-        phone3.setText("");
-        address3.setText("");
-        city3.setText("");
-
-    }
+   // }
 
 }
 

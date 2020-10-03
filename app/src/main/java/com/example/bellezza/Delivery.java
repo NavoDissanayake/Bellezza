@@ -4,7 +4,7 @@ public class Delivery {
 
 
     private String name;
-    private Integer phone;
+    private String phone;
     private String address;
     private String city;
 
@@ -13,18 +13,15 @@ public class Delivery {
 
     }
 
-    public Delivery(String name, Integer phone, String addr, String city) {
-
-
-        this.name=name;
+    public Delivery(String name ,String phone , String address , String city) {
+        this.name  = name;
         this.phone = phone;
-        this.address= addr;
-        this.city=city;
-
-
+        this.address = address;
+        this.city = city;
     }
 
-    //name
+
+
     public String getName() {
         return name;
     }
@@ -33,21 +30,15 @@ public class Delivery {
         this.name = name;
     }
 
+    public String getPhone() {
+        return phone;
+    }
 
-    //phone number
-    //public static Integer getPhone() {
-     //   return phone;
-    //}
-
-
-    public void setPhone(Integer phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
 
-
-
-    //address
     public String getAddress() {
         return address;
     }
@@ -57,8 +48,6 @@ public class Delivery {
     }
 
 
-
-    //city
     public String getCity() {
         return city;
     }
@@ -66,6 +55,7 @@ public class Delivery {
     public void setCity(String city) {
         this.city = city;
     }
+
 
 
 }
