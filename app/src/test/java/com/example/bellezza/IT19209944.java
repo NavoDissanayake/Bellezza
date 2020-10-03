@@ -4,6 +4,8 @@ package com.example.bellezza;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import static org.junit.Assert.*;
 /**
  * Example local unit test, which will execute on the development machine (host).
  *
@@ -25,9 +27,13 @@ public class IT19209944 {
     public void finalTotCal_isCorrect() {
 
 
-    //    tot = confirm_order.finalTotCal(100,1220);
-       // assertEquals(1320, tot, 0.001);
+    tot = confirm_order.finalTotCal(100,1220);
+    assertEquals(1320, tot, 0.001);
+
+
     }
+
+
 
 
     @After

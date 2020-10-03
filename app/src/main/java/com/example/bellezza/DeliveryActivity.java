@@ -14,6 +14,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+
 //import java.text.SimpleDateFormat;
 //import java.util.Calendar;
 public class DeliveryActivity extends AppCompatActivity {
@@ -26,7 +29,7 @@ public class DeliveryActivity extends AppCompatActivity {
     DatabaseReference DeliveryRef;
     // String saveCurrentdate,saveCurrentTime;
     // String DeliveryRandomKey;
-       String Cname , PhoneNo , Address , City;
+    String Cname , PhoneNo , Address , City;
 
     //String DeliveryRandomKey, downloadImageUrl;
     ProgressDialog loadingBar;
@@ -129,20 +132,41 @@ public class DeliveryActivity extends AppCompatActivity {
 
     }
 
+
+
+
+
+
     private void confirmOrder(){
 
-        DeliveryRef = FirebaseDatabase.getInstance().getReference().child("Delivery");
+
+
+
+
+       DeliveryRef = FirebaseDatabase.getInstance().getReference().child("Delivery");
+
+
+
+        final String saveCurrentdate,saveCurrentTime;
+        Calendar calendar = Calendar.getInstance();
+        final SimpleDateFormat currentDate = new SimpleDateFormat("MMM dd, yyyy");
+        saveCurrentdate = currentDate.format(calendar.getTime());
+
+        SimpleDateFormat currentTime = new SimpleDateFormat("HH:mm:ss a");
+        saveCurrentTime = currentTime.format(calendar.getTime());
 
 
         Cname = name2.getText().toString();
         PhoneNo = phone2.getText().toString();
         Address= addr2.getText().toString();
         City=city2.getText().toString();
+        deliver.setDate(saveCurrentdate);
+        deliver.setTime(saveCurrentTime);
 
-
-        Delivery deliver = new Delivery(Cname , PhoneNo , Address , City);
+        Delivery deliver = new Delivery(Cname , PhoneNo , Address , City , "","" , "");
         DeliveryRef.child("996450325V").setValue(deliver);
-        Toast.makeText(DeliveryActivity.this,"Your final order has placed successful..",Toast.LENGTH_SHORT).show();
+        Toast.makeText(DeliveryActivity.this,"Your order has placed successful..",Toast.LENGTH_SHORT).show();
+
 
         OpenUi();
 

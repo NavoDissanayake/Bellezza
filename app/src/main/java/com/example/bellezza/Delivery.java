@@ -7,17 +7,24 @@ public class Delivery {
     private String phone;
     private String address;
     private String city;
+    private String date;
+    private String time;
+    private String total;
 
 
     public Delivery() {
 
     }
 
-    public Delivery(String name ,String phone , String address , String city) {
+    public Delivery(String name ,String phone , String address , String city,String date , String time ,String total) {
         this.name  = name;
         this.phone = phone;
         this.address = address;
         this.city = city;
+        this.date = date ;
+        this.time = time;
+        this.total = total;
+
     }
 
 
@@ -57,5 +64,29 @@ public class Delivery {
     }
 
 
+    public String getDate() {
+        return date;
+    }
 
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
+
+    public String getTotal() {
+        return total;
+    }
+
+    public void setTotal(String total) {
+        this.total = total;
+    }
 }
