@@ -166,7 +166,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-               
+
                 DatabaseReference updRef = FirebaseDatabase.getInstance().getReference().child("Delivery");
 
               final String saveCurrentdate,saveCurrentTime;
@@ -205,7 +205,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                                 delref.setValue(deliver);
 
                                 //Feedback to the user via a Toast
-                                Toast.makeText(getApplicationContext(),"Data Updated Successfully",Toast.LENGTH_SHORT).show();
+                               // Toast.makeText(getApplicationContext(),"Data Updated Successfully",Toast.LENGTH_SHORT).show();
 
                             }catch (NumberFormatException e){
                                 Toast.makeText(getApplicationContext(),"Invalid Contact Number",Toast.LENGTH_SHORT).show();
@@ -269,9 +269,9 @@ public class ConfirmOrderActivity extends AppCompatActivity {
 
 
 
-    protected int finalTotCal(int del_amount , int tot_aomount){
+    protected int finalTotCal(int  txtdel  , int txttvTotAmountFin){
 
-        return del_amount + tot_aomount;
+        return txtdel+ txttvTotAmountFin;
 
     }
 
