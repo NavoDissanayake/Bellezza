@@ -10,15 +10,12 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-//import java.text.SimpleDateFormat;
-//import java.util.Calendar;
+
 public class DeliveryActivity extends AppCompatActivity {
 
 
@@ -162,6 +159,8 @@ public class DeliveryActivity extends AppCompatActivity {
         City=city2.getText().toString();
         deliver.setDate(saveCurrentdate);
         deliver.setTime(saveCurrentTime);
+
+
 
         Delivery deliver = new Delivery(Cname , PhoneNo , Address , City , "","" , "");
         DeliveryRef.child("996450325V").setValue(deliver);

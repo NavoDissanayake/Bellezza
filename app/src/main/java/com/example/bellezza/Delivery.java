@@ -16,6 +16,7 @@ public class Delivery {
 
     }
 
+
     public Delivery(String name ,String phone , String address , String city,String date , String time ,String total) {
         this.name  = name;
         this.phone = phone;

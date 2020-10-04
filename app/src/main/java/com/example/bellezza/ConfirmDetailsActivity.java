@@ -93,6 +93,8 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
         });
 
 
+
+
         //next button
         Confirmbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -106,10 +108,18 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
         });
 
 
+
+
+
+
+
+
        //update details
         updtebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+
 
 
                 DatabaseReference updRef = FirebaseDatabase.getInstance().getReference().child("Delivery");
@@ -159,6 +169,13 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
 
 
 
+
+
+
+
+
+
+
         //delete details
         delbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -189,6 +206,9 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
 
 
     }
+
+
+
 
 
  //   private void clearControls() {

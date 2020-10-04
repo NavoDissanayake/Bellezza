@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back2"
+    android:background="@color/design_default_color_background"
     tools:context=".DeliveryActivity">
 
 
@@ -16,7 +16,7 @@
         android:layout_marginEnd="8dp"
         android:fontFamily="@font/adamina"
         android:text="@string/detailTopic"
-        android:textColor="#12080C"
+        android:textColor="#E87E79"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -34,7 +34,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:background="#171515"
+        android:background="#E87E79"
         android:text="@string/button2"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
@@ -117,6 +117,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.725"
         tools:ignore="LabelFor" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="342dp"
+        android:layout_height="142dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.149"
+        app:srcCompat="@drawable/deliver" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

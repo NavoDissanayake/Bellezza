@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/back2"
+    android:background="#FFFFFF"
     tools:context=".ConfirmDetailsActivity">
 
     <TextView
@@ -25,7 +25,7 @@
         android:layout_width="299dp"
         android:layout_height="49dp"
         android:layout_marginBottom="8dp"
-        android:background="#151314"
+        android:background="#E87E79"
         android:fontFamily="sans-serif"
         android:text="@string/button3"
         android:textColor="#FFFFFF"
@@ -92,7 +92,9 @@
         android:id="@+id/updatebtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#E87E79"
         android:text="@string/updatebtn"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.272"
@@ -104,7 +106,9 @@
         android:id="@+id/deletebtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="#E87E79"
         android:text="@string/deletebtn"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.761"
