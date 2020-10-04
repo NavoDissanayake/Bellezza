@@ -153,6 +153,8 @@ public class DeliveryActivity extends AppCompatActivity {
         saveCurrentTime = currentTime.format(calendar.getTime());
 
 
+
+
         Cname = name2.getText().toString();
         PhoneNo = phone2.getText().toString();
         Address= addr2.getText().toString();

@@ -86,11 +86,11 @@ public class ConfirmOrderActivity extends AppCompatActivity {
 
                         int del = 150;
 
-                        int tot = Integer.parseInt(dataSnapshot.child("User").child("TotalPayable").getValue().toString()) + del;
+                        int tot = Integer.parseInt(dataSnapshot.child("Cart").child("price").getValue().toString()) + del;
 
 
 
-                        txttotal_price2.setText("LKR"+dataSnapshot.child("User").child("TotalPayable").getValue().toString());
+                        txttotal_price2.setText("LKR"+dataSnapshot.child("Cart").child("price").getValue().toString());
                         txtdel.setText("LKR"+ del);
                         txttvTotAmountFin.setText("LKR "+ tot);
 
@@ -99,11 +99,11 @@ public class ConfirmOrderActivity extends AppCompatActivity {
 
                         int del = 250;
 
-                        int tot = Integer.parseInt(dataSnapshot.child("User").child("TotalPayable").getValue().toString()) + del;
+                        int tot = Integer.parseInt(dataSnapshot.child("Cart").child("price").getValue().toString()) + del;
 
 
 
-                        txttotal_price2.setText("LKR"+dataSnapshot.child("User").child("TotalPayable").getValue().toString());
+                        txttotal_price2.setText("LKR"+dataSnapshot.child("Cart").child("price").getValue().toString());
                         txtdel.setText("LKR"+ del);
                         txttvTotAmountFin.setText("LKR "+ tot);
 
@@ -111,22 +111,22 @@ public class ConfirmOrderActivity extends AppCompatActivity {
             }else if (dataSnapshot.child("Delivery").child("996450325V").child("city").getValue().toString().equals("Kurunegala" ) || dataSnapshot.child("Delivery").child("996450325V").child("city").getValue().toString().equals("kurunegala") ) {
 
                         int del = 300;
-                        int tot = Integer.parseInt(dataSnapshot.child("User").child("TotalPayable").getValue().toString()) + del;
+                        int tot = Integer.parseInt(dataSnapshot.child("Cart").child("price").getValue().toString()) + del;
 
 
 
-                        txttotal_price2.setText("LKR"+dataSnapshot.child("User").child("TotalPayable").getValue().toString());
+                        txttotal_price2.setText("LKR"+dataSnapshot.child("Cart").child("price").getValue().toString());
                         txtdel.setText("LKR"+ del);
                         txttvTotAmountFin.setText("LKR "+ tot);
 
             }else if (dataSnapshot.child("Delivery").child("996450325V").child("city").getValue().toString().equals("Kegalle" ) || dataSnapshot.child("Delivery").child("996450325V").child("city").getValue().toString().equals("kegalle") ) {
 
                         int del = 270;
-                        int tot = Integer.parseInt(dataSnapshot.child("User").child("TotalPayable").getValue().toString()) + del;
+                        int tot = Integer.parseInt(dataSnapshot.child("Cart").child("price").getValue().toString()) + del;
 
 
 
-                        txttotal_price2.setText("LKR"+dataSnapshot.child("User").child("TotalPayable").getValue().toString());
+                        txttotal_price2.setText("LKR"+dataSnapshot.child("Cart").child("price").getValue().toString());
                         txtdel.setText("LKR"+ del);
                         txttvTotAmountFin.setText("LKR "+ tot);
 
@@ -136,9 +136,9 @@ public class ConfirmOrderActivity extends AppCompatActivity {
 
                         int del = 400;
 
-                        int tot = Integer.parseInt(dataSnapshot.child("User").child("TotalPayable").getValue().toString()) + del;
+                        int tot = Integer.parseInt(dataSnapshot.child("Cart").child("price").getValue().toString()) + del;
 
-                        txttotal_price2.setText("LKR" + dataSnapshot.child("User").child("TotalPayable").getValue().toString());
+                        txttotal_price2.setText("LKR" + dataSnapshot.child("Cart").child("price").getValue().toString());
                         txtdel.setText("LKR" + del);
                         txttvTotAmountFin.setText("LKR"+ tot);
 
