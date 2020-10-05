@@ -4,124 +4,83 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IT19244594.Login"
+    android:background="@drawable/s"
 
-    android:background="@drawable/r"
     android:soundEffectsEnabled="false"
     android:theme="@style/AppTheme"
-    android:visibility="visible">
+    android:visibility="visible"
+    tools:context=".IT19244594.Login">
 
 
     <EditText
         android:id="@+id/editTextTextUsername"
-        android:layout_width="246dp"
-        android:layout_height="48dp"
-        android:background="@drawable/g"
+        android:layout_width="305dp"
+        android:layout_height="51dp"
         android:backgroundTint="#A87171"
         android:ems="10"
-        android:hint="               NIC"
+        android:hint="NIC"
         android:inputType="text"
         android:textColor="#040404"
-        android:textColorHint="#000000"
+        android:textColorHint="#4A4343"
         android:textSize="22sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.606"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.437" />
+        app:layout_constraintVertical_bias="0.433" />
 
-<EditText
-    android:id="@+id/editTextTextPassword"
-    android:layout_width="245dp"
-    android:layout_height="51dp"
-    android:background="@drawable/g"
-    android:backgroundTint="#A87171"
-    android:ems="10"
-    android:hint="              Password"
-    android:inputType="textPassword"
-    android:textColorHint="#070707"
-    android:textSize="22sp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintHorizontal_bias="0.606"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintVertical_bias="0.597" />
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="308dp"
+        android:layout_height="47dp"
+
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColorHint="#4E4545"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.477"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.529" />
 
     <TextView
         android:id="@+id/Login"
-        android:layout_width="132dp"
+        android:layout_width="134dp"
         android:layout_height="53dp"
         android:capitalize="words"
         android:fontFamily="sans-serif-black"
         android:text="Log In"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textColor="#1B1616"
+        android:textColor="#E87E79"
         android:textSize="36sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.551"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.269" />
-
-    <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="357dp"
-        android:layout_height="45dp"
-        android:background="@drawable/v"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
-
-    </LinearLayout>
+        app:layout_constraintVertical_bias="0.203" />
 
     <Button
         android:id="@+id/LoginBtn"
-        android:layout_width="121dp"
-        android:layout_height="47dp"
-        android:background="#040404"
+        android:layout_width="320dp"
+        android:layout_height="45dp"
+        android:background="#E87E79"
         android:fontFamily="sans-serif-black"
         android:text="Login"
         android:textAlignment="center"
-        android:textColor="#B56666"
+        android:textColor="#D8C9C9"
         android:textSize="18sp"
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintHorizontal_bias="0.538"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.814" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="55dp"
-        android:layout_height="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo_size" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="25dp"
-        android:layout_height="330dp"
-        android:text="BELLEZZA"
-        android:textColor="#F8F5F5"
-        android:textDirection="firstStrongLtr"
-        android:textSize="30sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.958"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.566" />
+        app:layout_constraintVertical_bias="0.65" />
 
     <FrameLayout
         android:id="@+id/frameLayout3"
@@ -142,7 +101,7 @@
             android:fontFamily="sans-serif-condensed-light"
             android:foregroundTint="#00FBFBFB"
             android:text="        May your day be as flawless as your makeup.."
-            android:textColor="#CF89A1"
+            android:textColor="#E87E79"
             android:textSize="18sp"
             android:textStyle="bold|italic" />
     </FrameLayout>
