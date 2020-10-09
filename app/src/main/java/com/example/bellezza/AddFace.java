@@ -96,26 +96,6 @@ public class AddFace extends AppCompatActivity {
 
 
 
-        listViewFace=(ListView)findViewById(R.id.listViewFace);
-        faceList= new ArrayList<>();
-
-        btnAdd.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                addFace();
-
-            }
-        });
-    listViewFace.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
-        @Override
-        public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-
-            Face face= faceList.get(position);
-            showUpdateDialog(face.getFaceId(), face.getFaceName(),face.getFaceDesc(),face.getFacePrice(),face.getFaceDate());
-
-            return false;
-        }
-    });
 
 }
 private String getExtention(Uri uri) {

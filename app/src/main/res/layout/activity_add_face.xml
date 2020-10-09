@@ -7,17 +7,6 @@
     tools:context=".AddFace">
 
 
-    <ListView
-        android:id="@+id/listViewFace"
-        android:layout_width="408dp"
-        android:layout_height="118dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/date"
-        app:layout_constraintVertical_bias="1.0" />
-
     <EditText
         android:id="@+id/face_name"
         android:layout_width="380dp"
@@ -29,10 +18,10 @@
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/spinnerBrands"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.917" />
+        app:layout_constraintVertical_bias="0.808" />
 
     <Spinner
         android:id="@+id/spinnerBrands"
@@ -41,10 +30,10 @@
         android:entries="@array/brand"
         app:layout_constraintBottom_toTopOf="@+id/face_des"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951" />
+        app:layout_constraintVertical_bias="0.874" />
 
     <EditText
         android:id="@+id/face_des"
@@ -60,7 +49,7 @@
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.915" />
+        app:layout_constraintVertical_bias="0.912" />
 
     <EditText
         android:id="@+id/face_price"
@@ -76,7 +65,7 @@
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.578" />
+        app:layout_constraintVertical_bias="0.778" />
 
     <EditText
         android:id="@+id/date"
@@ -93,7 +82,7 @@
         app:layout_constraintHorizontal_bias="0.135"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/face_price"
-        app:layout_constraintVertical_bias="0.095" />
+        app:layout_constraintVertical_bias="0.395" />
 
     <Button
         android:id="@+id/btnAdd"
@@ -109,7 +98,7 @@
         app:layout_constraintHorizontal_bias="0.347"
         app:layout_constraintStart_toEndOf="@+id/date"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.696" />
+        app:layout_constraintVertical_bias="0.976" />
 
     <ImageView
         android:id="@+id/imgview"
