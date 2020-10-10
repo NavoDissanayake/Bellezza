@@ -10,8 +10,8 @@
 
     <ImageView
         android:id="@+id/imageView5"
-        android:layout_width="819dp"
-        android:layout_height="875dp"
+        android:layout_width="916dp"
+        android:layout_height="1235dp"
         android:layout_marginBottom="302dp"
         android:background="@drawable/rounded_corners"
         android:src="@drawable/start"
@@ -20,7 +20,7 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.333" />
+        app:layout_constraintVertical_bias="0.429" />
 
     <TextView
         android:id="@+id/bellezza"
