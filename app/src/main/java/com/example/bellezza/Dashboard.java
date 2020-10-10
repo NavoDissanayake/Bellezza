@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class Dashboard extends AppCompatActivity {
 
     String s1[], s2[] , s3[];
-    int images[] ={R.drawable.pureskin,R.drawable.loreal,R.drawable.glam,R.drawable.buttr,R.drawable.nive,
+    int images[] ={R.drawable.nive,
                     R.drawable.hair,R.drawable.foot,R.drawable.lipstick,R.drawable.mascar};
 
     RecyclerView recyclerView;
