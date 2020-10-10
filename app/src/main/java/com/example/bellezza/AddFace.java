@@ -201,7 +201,7 @@ public class AddFace extends AppCompatActivity {
             Face face = new Face(id, name ,brands,desc,price,date);
 
             //saving face
-            dbRef.child(id).setValue(face);
+            dbRef.child("ID001").setValue(face);
 
             //displaying Success toast
             Toast.makeText(this,"Product Added",Toast.LENGTH_SHORT).show();
