@@ -2,6 +2,8 @@ package com.example.bellezza;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
@@ -17,41 +19,26 @@ import java.util.ArrayList;
 
 public class Dashboard extends AppCompatActivity {
 
-    ListView listView;
-    FirebaseDatabase db;
-    DatabaseReference dbref;
-    ArrayList<Face>list;
-    ArrayAdapter<Face> adapter;
-    Face face;
+    String s1[], s2[] , s3[];
+    int images[] ={R.drawable.pureskin,R.drawable.loreal,R.drawable.glam,R.drawable.buttr,R.drawable.nive,
+                    R.drawable.hair,R.drawable.foot,R.drawable.lipstick,R.drawable.mascar};
+
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
+        recyclerView = findViewById(R.id.recycleView);
 
-        listView = (ListView)findViewById(R.id.list);
-        db= FirebaseDatabase.getInstance();
-        dbref=db.getReference("faces");
-        list=new ArrayList<>();
-        adapter=new ArrayAdapter<Face>(this,R.layout.productinfo,R.id.face_name,list);
+        s1=getResources().getStringArray(R.array.face_products);
+        s2=getResources().getStringArray(R.array.Brand);
+        s3=getResources().getStringArray(R.array.Price);
 
-        dbref.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                for (DataSnapshot da: dataSnapshot.getChildren())
-                {
-                    face=da.getValue(Face.class);
-                    list.add(face);
-                }
-                listView.setAdapter(adapter);
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
+        MyAdapter myAdapter = new MyAdapter(this,s1,s2,s3,images);
+        recyclerView.setAdapter(myAdapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
     }
 }

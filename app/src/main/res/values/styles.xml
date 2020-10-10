@@ -7,4 +7,40 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <string-array name="face_products">
+        <item>Pure Skin</item>
+        <item>Whitening</item>
+        <item>Glamour</item>
+        <item>Butter Creamy</item>
+        <item>Milk and Honey</item>
+        <item>Hair Care</item>
+        <item>Footy</item>
+        <item>Blood Red Lipstick</item>
+        <item>Eye Catching Eye</item>
+
+    </string-array>
+    <string-array name="Brand">
+        <item>Oriflame</item>
+        <item>Loreal</item>
+        <item>Ponds</item>
+        <item>E.L.F</item>
+        <item>Nivea</item>
+        <item>Oriflame</item>
+        <item>Loreal</item>
+        <item>Oriflame</item>
+        <item>E.L.F</item>
+    </string-array>
+
+    <string-array name="Price">
+        <item>RS:1200/=</item>
+        <item>RS:2100/=</item>
+        <item>RS:990/=</item>
+        <item>RS:670/=</item>
+        <item>RS:890/=</item>
+        <item>RS:2100/=</item>
+        <item>RS:2100/=</item>
+        <item>RS:890/=</item>
+        <item>RS:1200/=</item>
+    </string-array>
+
 </resources>
