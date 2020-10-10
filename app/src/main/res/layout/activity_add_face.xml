@@ -7,10 +7,22 @@
     tools:context=".AddFace">
 
 
+    <ListView
+        android:id="@+id/listViewFace"
+        android:layout_width="413dp"
+        android:layout_height="138dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/date"
+        app:layout_constraintVertical_bias="1.0" />
+
     <EditText
         android:id="@+id/face_name"
         android:layout_width="380dp"
         android:layout_height="55dp"
+        android:layout_marginTop="193dp"
         android:background="@drawable/image_corner"
         android:elevation="25dp"
         android:ems="10"
@@ -21,24 +33,26 @@
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.808" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Spinner
         android:id="@+id/spinnerBrands"
         android:layout_width="380dp"
         android:layout_height="34dp"
+        android:layout_marginTop="261dp"
         android:entries="@array/brand"
         app:layout_constraintBottom_toTopOf="@+id/face_des"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.874" />
+        app:layout_constraintVertical_bias="0.026" />
 
     <EditText
         android:id="@+id/face_des"
         android:layout_width="380dp"
         android:layout_height="55dp"
+        android:layout_marginTop="308dp"
         android:background="@drawable/image_corner"
         android:elevation="25dp"
         android:ems="10"
@@ -46,15 +60,16 @@
         android:inputType="textMultiLine"
         app:layout_constraintBottom_toTopOf="@+id/face_price"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.912" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/face_price"
         android:layout_width="380dp"
         android:layout_height="55dp"
+        android:layout_marginTop="391dp"
         android:background="@drawable/image_corner"
         android:elevation="25dp"
         android:ems="10"
@@ -65,13 +80,14 @@
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.778" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/date"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="468dp"
         android:background="@drawable/image_corner"
         android:elevation="25dp"
         android:hint="   Enter Date..."
@@ -79,15 +95,16 @@
         android:textColor="#897"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.135"
+        app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/face_price"
-        app:layout_constraintVertical_bias="0.395" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/btnAdd"
         android:layout_width="73dp"
         android:layout_height="42dp"
+        android:layout_marginTop="480dp"
         android:background="@drawable/image_corner"
         android:backgroundTint="#F49191"
         android:elevation="25dp"
@@ -95,28 +112,29 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.347"
+        app:layout_constraintHorizontal_bias="0.318"
         app:layout_constraintStart_toEndOf="@+id/date"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.976" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/imgview"
         android:layout_width="139dp"
         android:layout_height="138dp"
 
+        android:layout_marginTop="38dp"
         app:layout_constraintBottom_toTopOf="@+id/face_name"
         app:layout_constraintEnd_toStartOf="@+id/upload"
-        app:layout_constraintHorizontal_bias="0.438"
         app:layout_constraintStart_toEndOf="@+id/addimg"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.607"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_launcher_foreground" />
 
     <Button
         android:id="@+id/addimg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="97dp"
         android:background="@drawable/image_corner"
         android:backgroundTint="#F49191"
         android:elevation="20dp"
@@ -125,15 +143,16 @@
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.071"
+        app:layout_constraintHorizontal_bias="0.102"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.114" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/upload"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="97dp"
         android:background="@drawable/image_corner"
         android:backgroundTint="#575555"
         android:elevation="20dp"
@@ -145,6 +164,6 @@
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.114" />
+        app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

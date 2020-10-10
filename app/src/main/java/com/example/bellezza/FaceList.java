@@ -18,7 +18,7 @@ public class FaceList extends ArrayAdapter {
     private List<Face> faceList;
 
     public FaceList(Activity context,List<Face> faceList){
-        super(context, R.layout.listlayout,faceList);
+        super(context, R.layout.addretrieve,faceList);
         this.context = context;
         this.faceList=faceList;
 
