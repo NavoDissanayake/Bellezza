@@ -5,14 +5,52 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="@drawable/back">
+
+    >
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src=""
+        android:id="@+id/imageView5"
+        android:layout_width="401dp"
+        android:layout_height="429dp"
+        android:layout_marginBottom="302dp"
+        android:background="@drawable/rounded_corners"
+        android:src="@drawable/start"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.433"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/bellezza"
+        android:layout_width="344dp"
+        android:layout_height="124dp"
+        android:fontFamily="@font/bangers"
+        android:text="Bellezza"
+        android:textAlignment="center"
+        android:textColor="#FFACAC"
+        android:textSize="70sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="286dp"
+        android:layout_height="28dp"
+        android:fontFamily="@font/aladin"
+        android:text="Hey Beautiful..Join With Us"
+        android:textAlignment="center"
+        android:textColor="#AF5555"
+        android:textSize="21sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bellezza"
+        app:layout_constraintVertical_bias="0.0" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
