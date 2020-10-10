@@ -2,6 +2,7 @@ package com.example.bellezza;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -50,6 +51,19 @@ public class Adminlogin extends AppCompatActivity {
                         b1.setEnabled(false);
                     }
                 }
+            }
+        });
+
+        Button b2 = (Button)findViewById(R.id.button);
+      b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent3 =new Intent(Adminlogin.this,Admin.class);
+                startActivity(intent3);
+
+                //Add Toast
+                Toast.makeText(Adminlogin.this, "Loading...", Toast.LENGTH_SHORT).show();
+
             }
         });
 
