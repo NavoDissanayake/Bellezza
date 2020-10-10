@@ -24,8 +24,7 @@ import java.util.ArrayList;
 public class Dashboard extends AppCompatActivity {
 
     String s1[], s2[] , s3[];
-    int images[] ={R.drawable.nive,
-                    R.drawable.hair,R.drawable.foot,R.drawable.lipstick,R.drawable.mascar};
+    int images[] ={R.drawable.hair,R.drawable.foot,R.drawable.lipstick,R.drawable.mascar};
 
     RecyclerView recyclerView;
 
@@ -34,6 +33,18 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
+        //add activity
+        Button next =(Button)findViewById(R.id.next);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent =new Intent(Dashboard.this,Admin.class);
+                startActivity(intent);
+
+                //Add Toast
+                Toast.makeText(Dashboard.this, "Loading...", Toast.LENGTH_SHORT).show();
+            }
+        });
         recyclerView = findViewById(R.id.recycleView);
 
         s1=getResources().getStringArray(R.array.face_products);
@@ -44,17 +55,6 @@ public class Dashboard extends AppCompatActivity {
         recyclerView.setAdapter(myAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        //add activity
-        Button next =(Button)findViewById(R.id.next);
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent1 =new Intent(Dashboard.this,Admin.class);
-                startActivity(intent1);
-
-                //Add Toast
-                Toast.makeText(Dashboard.this, "Loading...", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
+
 }

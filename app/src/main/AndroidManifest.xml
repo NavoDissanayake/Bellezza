@@ -21,7 +21,7 @@
         <activity android:name=".Other" />
         <activity android:name=".Product" />
         <activity android:name=".AddFace" />
-        <activity android:name=".Admin"></activity>
+        <activity android:name=".Admin"/>
 
         <meta-data
             android:name="preloaded_fonts"
