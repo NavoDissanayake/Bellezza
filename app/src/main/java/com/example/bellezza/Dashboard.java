@@ -33,27 +33,31 @@ public class Dashboard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dashboard);
 
-        //add activity
-        Button next =(Button)findViewById(R.id.next);
-        next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent =new Intent(Dashboard.this,Admin.class);
-                startActivity(intent);
 
-                //Add Toast
-                Toast.makeText(Dashboard.this, "Loading...", Toast.LENGTH_SHORT).show();
-            }
-        });
         recyclerView = findViewById(R.id.recycleView);
 
         s1=getResources().getStringArray(R.array.face_products);
         s2=getResources().getStringArray(R.array.Brand);
         s3=getResources().getStringArray(R.array.Price);
 
+
+
         MyAdapter myAdapter = new MyAdapter(this,s1,s2,s3,images);
         recyclerView.setAdapter(myAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+        //add activity
+        Button next =(Button)findViewById(R.id.next);
+        next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent4 =new Intent(Dashboard.this,AdminLogin.class);
+                startActivity(intent4);
+
+                //Add Toast
+                Toast.makeText(Dashboard.this, "Loading...", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 
