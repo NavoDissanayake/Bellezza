@@ -81,7 +81,7 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
                     city3.setText(dataSnapshot.child("city").getValue().toString());
 
                 } else
-                    Toast.makeText(getApplicationContext(), key, Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "No Source to display", Toast.LENGTH_SHORT).show();
             }
 
             @Override
