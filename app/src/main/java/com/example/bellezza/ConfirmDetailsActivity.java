@@ -1,5 +1,7 @@
 package com.example.bellezza;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -26,6 +29,7 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
     private DataSnapshot dataSnapshot;
     DatabaseReference DeliveryRef;
     Delivery deliver;
+    private String key;
 
 
 
@@ -54,23 +58,17 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
 
 
 
-       /* SpannableString content = new SpannableString("Options");
-        content.setSpan(new UnderlineSpan(), 0, content.length(), 0);
-        textView.setText(content);
-
-*/
-
-
         //action bar
         setTitle("Confirm Details");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 
 
+        key = getIntent().getStringExtra("key").toString();
+        FirebaseAuth auth;
+        DatabaseReference addRef;
 
-
-
-        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Delivery").child("996450325V");
+        DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Delivery").child(key);
 
         readRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
@@ -83,7 +81,7 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
                     city3.setText(dataSnapshot.child("city").getValue().toString());
 
                 } else
-                    Toast.makeText(getApplicationContext(), "No source to Display", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), key, Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -92,33 +90,23 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
             }
         });
 
-
-
-
         //next button
         Confirmbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(ConfirmDetailsActivity.this, ConfirmOrderActivity.class);
-
+                i.putExtra("key",key);
                 startActivity(i);
-
-
             }
         });
 
 
 
-
-
-
-
-
+/*
        //update details
         updtebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
 
 
 
@@ -127,25 +115,14 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.hasChild("996450325V")){
-
-
                             try{
-
-
-
                                 deliver.setName(name3.getText().toString().trim());
                                 deliver.setPhone(phone3.getText().toString().trim());
                                 deliver.setAddress(address3.getText().toString().trim());
                                 deliver.setCity(city3.getText().toString().trim());
 
-
-
                                 DeliveryRef = FirebaseDatabase.getInstance().getReference().child("Delivery").child("996450325V");
-
-
                                 DeliveryRef.setValue(deliver);
-
-
                                 //Feedback to the user via a Toast
                                 Toast.makeText(getApplicationContext(),"Data Updated Successfully",Toast.LENGTH_SHORT).show();
                             }
@@ -156,10 +133,8 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
                         else
                             Toast.makeText(getApplicationContext(),"No Source to Update", Toast.LENGTH_SHORT).show();
                     }
-
                     @Override
                     public void onCancelled(@NonNull DatabaseError databaseError) {
-
                     }
                 });
             }
@@ -167,15 +142,30 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
 
 
 
+ */
+        //click update button
+        updtebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                onUpdateDetailsClick();
+            }
+        });
+
+
+        delbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                onDeleteDetailsClick();
+            }
+        });
 
 
 
-
-
-
-
-
-
+/*
         //delete details
         delbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -186,7 +176,7 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                         if(dataSnapshot.hasChildren()){
 
-                            DeliveryRef = FirebaseDatabase.getInstance().getReference().child("Delivery").child("delivery1");
+                            DeliveryRef = FirebaseDatabase.getInstance().getReference().child("Delivery").child("996450325V");
                             DeliveryRef.removeValue();
                            // clearControls();
                             Toast.makeText(getApplicationContext(),"Data Deleted Successfully",Toast.LENGTH_SHORT).show();
@@ -204,6 +194,62 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
         });
 
 
+ */
+
+
+    }
+
+
+
+
+    //update details with alert
+    private void onUpdateDetailsClick() {
+
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Are sure want to update details?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+
+
+
+                DatabaseReference updRef = FirebaseDatabase.getInstance().getReference().child("Delivery");
+                updRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.hasChild(key)){
+                            try{
+                                deliver.setName(name3.getText().toString().trim());
+                                deliver.setPhone(phone3.getText().toString().trim());
+                                deliver.setAddress(address3.getText().toString().trim());
+                                deliver.setCity(city3.getText().toString().trim());
+
+                                DeliveryRef = FirebaseDatabase.getInstance().getReference().child("Delivery").child(key);
+                                DeliveryRef.setValue(deliver);
+                                //Feedback to the user via a Toast
+                                Toast.makeText(getApplicationContext(),"Data Updated Successfully",Toast.LENGTH_SHORT).show();
+                            }
+                            catch(NumberFormatException e){
+                                Toast.makeText(getApplicationContext(),"Invalid Contact Number",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        else
+                            Toast.makeText(getApplicationContext(),"No Source to Update", Toast.LENGTH_SHORT).show();
+                    }
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+                    }
+                });
+            }
+        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        }).show();
+
+
 
     }
 
@@ -211,44 +257,61 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
 
 
 
- //   private void clearControls() {
+
+    private void onDeleteDetailsClick(){
 
 
-  //      name3.setText("");
-  //      phone3.setText("");
-  //      address3.setText("");
-  //      city3.setText("");
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Are sure want to delete details?").setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
 
-   // }
+                DatabaseReference delRef = FirebaseDatabase.getInstance().getReference().child("Delivery");
+                delRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                        if(dataSnapshot.hasChildren()){
+
+                            DeliveryRef = FirebaseDatabase.getInstance().getReference().child("Delivery").child(key);
+                            DeliveryRef.removeValue();
+                            clearControls();
+                            Toast.makeText(getApplicationContext(),"Data Deleted Successfully",Toast.LENGTH_SHORT).show();
+                        }
+                        else
+                            Toast.makeText(getApplicationContext(),"No Source to Delete", Toast.LENGTH_SHORT).show();
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                    }
+                });
+
+
+            }
+        }).setNegativeButton("No", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        }).show();
+
+    }
+
+
+    private void clearControls(){
+
+
+        name3.setText("");
+        phone3.setText("");
+        address3.setText("");
+        city3.setText("");
+
+    }
 
 }
 
 
-
-    //contex menu
-  // @Override
- // public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
-       // super.onCreateContextMenu(menu, v, menuInfo);
-        //menu.setHeaderTitle("Choose your option");
-       // getMenuInflater().inflate(R.menu.op_menu, menu);
-    //}
-
-
-   // @Override
-   // public boolean onContextItemSelected(MenuItem item) {
-   //     switch (item.getItemId()) {
-        //    case R.id.option_1:
-         //       Toast.makeText(this, "Edit selected", Toast.LENGTH_SHORT).show();
-          //      return true;
-           // case R.id.option_2:
-           //     Toast.makeText(this, "Delete selected", Toast.LENGTH_SHORT).show();
-           //     return true;
-           // default:
-           //     return super.onContextItemSelected(item);
-        //}
-
-
-  //  }
 
 
 

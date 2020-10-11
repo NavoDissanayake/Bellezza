@@ -1,6 +1,5 @@
 package com.example.bellezza;
 
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,7 +14,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
-
 public class DeliveryActivity extends AppCompatActivity {
 
 
@@ -24,14 +22,9 @@ public class DeliveryActivity extends AppCompatActivity {
     Button addbtn;
     Delivery deliver;
     DatabaseReference DeliveryRef;
-    // String saveCurrentdate,saveCurrentTime;
-    // String DeliveryRandomKey;
     String Cname , PhoneNo , Address , City;
-
-    //String DeliveryRandomKey, downloadImageUrl;
     ProgressDialog loadingBar;
-
-
+    String key;
 
 
     @Override
@@ -73,18 +66,12 @@ public class DeliveryActivity extends AppCompatActivity {
         });
     }
 
-
-
     private void Check(){
-
 
         Cname = name2.getText().toString();
         PhoneNo = phone2.getText().toString();
         Address= addr2.getText().toString();
         City=city2.getText().toString();
-
-
-
 
         if (Cname.length()==0)
         {
@@ -120,29 +107,15 @@ public class DeliveryActivity extends AppCompatActivity {
         }
         else
         {
-
             confirmOrder();
-
-
         }
-
-
     }
-
-
-
 
 
 
     private void confirmOrder(){
 
-
-
-
-
        DeliveryRef = FirebaseDatabase.getInstance().getReference().child("Delivery");
-
-
 
         final String saveCurrentdate,saveCurrentTime;
         Calendar calendar = Calendar.getInstance();
@@ -153,8 +126,6 @@ public class DeliveryActivity extends AppCompatActivity {
         saveCurrentTime = currentTime.format(calendar.getTime());
 
 
-
-
         Cname = name2.getText().toString();
         PhoneNo = phone2.getText().toString();
         Address= addr2.getText().toString();
@@ -162,10 +133,10 @@ public class DeliveryActivity extends AppCompatActivity {
         deliver.setDate(saveCurrentdate);
         deliver.setTime(saveCurrentTime);
 
-
-
         Delivery deliver = new Delivery(Cname , PhoneNo , Address , City , "","" , "");
-        DeliveryRef.child("996450325V").setValue(deliver);
+        //DeliveryRef.child("996450325V").setValue(deliver);
+        key = DeliveryRef.push().getKey();
+        DeliveryRef.child(key).setValue(deliver);
         Toast.makeText(DeliveryActivity.this,"Your order has placed successful..",Toast.LENGTH_SHORT).show();
 
 
@@ -174,36 +145,18 @@ public class DeliveryActivity extends AppCompatActivity {
     }
 
 
-
-    //clear inputs
- /*   private void clearControls() {
-
-        name2.setText("");
-        phone2.setText("");
-        addr2.setText("");
-        city2.setText("");
-
-
-
-    }
-
-*/
-
-
     //open next page
     private void OpenUi() {
 
 
         Intent intent = new Intent(this, ConfirmDetailsActivity.class);
+        intent.putExtra("key",key);
         startActivity(intent);
-
 
         StoreDeliveryInformation();
 
 
-
     }
-
 
 
     //loading bar
@@ -215,12 +168,21 @@ public class DeliveryActivity extends AppCompatActivity {
         loadingBar.setCanceledOnTouchOutside(false);
         loadingBar.show();
 
-
-
+        clearControls();
 
     }
 
 
+
+    private void clearControls(){
+
+
+        name2.setText("");
+        phone2.setText("");
+        addr2.setText("");
+        city2.setText("");
+
+    }
 }
 
 

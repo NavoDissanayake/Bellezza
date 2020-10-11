@@ -3,6 +3,7 @@ package com.example.bellezza;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -31,6 +32,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
     TextView txttotal_price2, txttvTotAmountFin, txtdel;
     //int deliveryTot;
    // String totalAmount = " ";
+    private String key;
 
 
     @Override
@@ -59,7 +61,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
 
         deliver = new Delivery();
 
-
+        key = getIntent().getStringExtra("key").toString();
         DatabaseReference readRef = FirebaseDatabase.getInstance().getReference();
 
         readRef.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -73,16 +75,14 @@ public class ConfirmOrderActivity extends AppCompatActivity {
 
            if (dataSnapshot.hasChildren()) {
 
-               confirmName.setText(dataSnapshot.child("Delivery").child("996450325V").child("name").getValue().toString());
-               confirmPhone.setText(dataSnapshot.child("Delivery").child("996450325V").child("phone").getValue().toString());
-               confirmAddress.setText(dataSnapshot.child("Delivery").child("996450325V").child("address").getValue().toString());
-               confirmCity.setText(dataSnapshot.child("Delivery").child("996450325V").child("city").getValue().toString());
+               confirmName.setText(dataSnapshot.child("Delivery").child(key).child("name").getValue().toString());
+               confirmPhone.setText(dataSnapshot.child("Delivery").child(key).child("phone").getValue().toString());
+               confirmAddress.setText(dataSnapshot.child("Delivery").child(key).child("address").getValue().toString());
+               confirmCity.setText(dataSnapshot.child("Delivery").child(key).child("city").getValue().toString());
 
-                    //confirmPhone.setText(dataSnapshot.child("phone").getValue().toString());
-                   // confirmAddress.setText(dataSnapshot.child("address").getValue().toString());
-                   // confirmCity.setText(dataSnapshot.child("city").getValue().toString());
 
-            if(dataSnapshot.child("Delivery").child("996450325V").child("city").getValue().toString().equals("Kandy" ) || dataSnapshot.child("Delivery").child("996450325V").child("city").getValue().toString().equals("kandy" ) ){
+
+            if(dataSnapshot.child("Delivery").child(key).child("city").getValue().toString().equals("Kandy" ) || dataSnapshot.child("Delivery").child(key).child("city").getValue().toString().equals("kandy" ) ){
 
                         int del = 150;
 
@@ -95,7 +95,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                         txttvTotAmountFin.setText("LKR "+ tot);
 
 
-            }else if (dataSnapshot.child("Delivery").child("996450325V").child("city").getValue().toString().equals("Matale" ) || dataSnapshot.child("Delivery").child("996450325V").child("city").getValue().toString().equals("matale") ) {
+            }else if (dataSnapshot.child("Delivery").child(key).child("city").getValue().toString().equals("Matale" ) || dataSnapshot.child("Delivery").child(key).child("city").getValue().toString().equals("matale") ) {
 
                         int del = 250;
 
@@ -108,7 +108,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                         txttvTotAmountFin.setText("LKR "+ tot);
 
 
-            }else if (dataSnapshot.child("Delivery").child("996450325V").child("city").getValue().toString().equals("Kurunegala" ) || dataSnapshot.child("Delivery").child("996450325V").child("city").getValue().toString().equals("kurunegala") ) {
+            }else if (dataSnapshot.child("Delivery").child(key).child("city").getValue().toString().equals("Kurunegala" ) || dataSnapshot.child("Delivery").child(key).child("city").getValue().toString().equals("kurunegala") ) {
 
                         int del = 300;
                         int tot = Integer.parseInt(dataSnapshot.child("Cart").child("price").getValue().toString()) + del;
@@ -119,7 +119,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                         txtdel.setText("LKR"+ del);
                         txttvTotAmountFin.setText("LKR "+ tot);
 
-            }else if (dataSnapshot.child("Delivery").child("996450325V").child("city").getValue().toString().equals("Kegalle" ) || dataSnapshot.child("Delivery").child("996450325V").child("city").getValue().toString().equals("kegalle") ) {
+            }else if (dataSnapshot.child("Delivery").child(key).child("city").getValue().toString().equals("Kegalle" ) || dataSnapshot.child("Delivery").child(key).child("city").getValue().toString().equals("kegalle") ) {
 
                         int del = 270;
                         int tot = Integer.parseInt(dataSnapshot.child("Cart").child("price").getValue().toString()) + del;
@@ -167,6 +167,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
             public void onClick(View view) {
 
 
+
                 DatabaseReference updRef = FirebaseDatabase.getInstance().getReference().child("Delivery");
 
               final String saveCurrentdate,saveCurrentTime;
@@ -183,7 +184,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot datasnapshot) {
 
-                        if(datasnapshot.hasChild("996450325V")){
+                        if(datasnapshot.hasChild(key)){
 
                             try {
 
@@ -197,8 +198,7 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                                 deliver.setTime(saveCurrentTime);
 
 
-
-                                DatabaseReference delref = FirebaseDatabase.getInstance().getReference().child("Delivery").child("996450325V");
+                                DatabaseReference delref = FirebaseDatabase.getInstance().getReference().child("Delivery").child(key);
 
 
 
@@ -250,7 +250,9 @@ public class ConfirmOrderActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
                         //close the activity when this button is clicked
-                        ConfirmOrderActivity.this.finish();
+                        //ConfirmOrderActivity.this.finish();
+                        confirmorder();
+
                     }
                 });
 
@@ -268,6 +270,15 @@ public class ConfirmOrderActivity extends AppCompatActivity {
 
 
 
+
+
+    private void  confirmorder(){
+        Intent i = new Intent(ConfirmOrderActivity.this, DeliveryActivity.class);
+
+        startActivity(i);
+
+
+    }
 
     protected int finalTotCal(int  txtdel  , int txttvTotAmountFin){
 
