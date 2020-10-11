@@ -26,32 +26,36 @@ import com.google.firebase.database.ValueEventListener;
 
 public class AdminLogin extends AppCompatActivity {
 
-    EditText nic, pwd;
-    Button Go;
+    // EditText nic, pwd;
+    //Button Go;
     // TextView forgotPassword;
     //FirebaseDatabase mFirebaseAuth;
-    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    //FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adminlogin);
 
-        //mFirebaseAuth=FirebaseDatabase.getInstance();
-
-        Button button1 =(Button)findViewById(R.id.sinup);
-        button1.setOnClickListener(new View.OnClickListener() {
+        //add activity
+        Button butn = (Button)findViewById(R.id.butn);
+        butn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 =new Intent(AdminLogin.this,AdminReg.class);
-                startActivity(intent1);
+                Intent intent8 = new Intent(AdminLogin.this ,Admin.class);
+                startActivity(intent8);
 
                 //Add Toast
-                Toast.makeText(AdminLogin.this, "Open Product...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdminLogin.this, "Loading...", Toast.LENGTH_SHORT).show();
             }
         });
 
-        nic = findViewById(R.id.nic);
+    }
+}
+
+        //mFirebaseAuth=FirebaseDatabase.getInstance();
+
+    /*     nic = findViewById(R.id.nic);
         pwd= findViewById(R.id.pwd);
         Go = findViewById(R.id.Go);
 
@@ -69,16 +73,17 @@ public class AdminLogin extends AppCompatActivity {
                     Toast toast = Toast.makeText(getApplicationContext(), "Username or Password  can't be empty", Toast.LENGTH_SHORT);
                     toast.show();
 
-                } else {
+                } else
+                    {
 
 
 
-                    Intent i = new Intent(AdminLogin.this, Admin.class);
-
-                    startActivity(i);
 
                 }
 
+                Intent i = new Intent(AdminLogin.this, Admin.class);
+
+                startActivity(i);
 
             }
 
@@ -87,7 +92,7 @@ public class AdminLogin extends AppCompatActivity {
 
     }
 
-    public void checkUserType(final String NIC, final String Password) {
+   public void checkUserType(final String NIC, final String Password) {
 
         final DatabaseReference userIsACustomer = database.getReference("Admin").child(NIC);
         //final DatabaseReference userIsASupplier = database.getReference("suppliers").child(username);
@@ -147,7 +152,6 @@ public class AdminLogin extends AppCompatActivity {
                 break;
 
         }
-    }
+    }*/
 
 
-}

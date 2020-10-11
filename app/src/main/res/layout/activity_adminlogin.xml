@@ -9,22 +9,22 @@
 
 
     <Button
-        android:id="@+id/Go"
+        android:id="@+id/butn"
         android:layout_width="350dp"
         android:layout_height="50dp"
+        android:layout_marginStart="17dp"
         android:layout_marginTop="411dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="270dp"
+        android:layout_marginEnd="44dp"
         android:background="@drawable/image_corner"
         android:backgroundTint="#000000"
         android:text="GO"
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/pwd"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/pwd"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/logo_name"
@@ -70,12 +70,12 @@
         android:background="@drawable/image_corner"
         android:hint="  Password"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/Go"
+        app:layout_constraintBottom_toTopOf="@+id/butn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/nic"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.416"
+        app:layout_constraintVertical_bias="0.0"
         app:passwordToggleEnabled="true" />
 
     <TextView
@@ -89,7 +89,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Go"
+        app:layout_constraintTop_toBottomOf="@+id/butn"
         app:layout_constraintVertical_bias="0.251" />
 
     <Button
@@ -104,7 +104,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/signup"
-        app:layout_constraintTop_toBottomOf="@+id/Go"
+        app:layout_constraintTop_toBottomOf="@+id/butn"
         app:layout_constraintVertical_bias="0.212" />
 
     <EditText
