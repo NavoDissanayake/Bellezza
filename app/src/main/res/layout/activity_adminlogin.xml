@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back"
+    tools:context=".AdminLogin">
+
+
+    <Button
+        android:id="@+id/Go"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="411dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="270dp"
+        android:background="@drawable/image_corner"
+        android:backgroundTint="#000000"
+        android:text="GO"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/pwd"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/pwd"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/logo_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
+        android:fontFamily="@font/aclonica"
+        android:text="Hello There, Welcome Back"
+        android:textColor="#000"
+        android:textSize="40sp"
+        android:transitionName="logo_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/sloogon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="533dp"
+        android:fontFamily="@font/aclonica"
+        android:text="Sign In To Continue"
+        android:textColor="#000"
+        android:textSize="18sp"
+        android:transitionName="logo_text"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/logo_name"
+        app:layout_constraintVertical_bias="0.0" />
+
+
+    <EditText
+        android:id="@+id/pwd"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="325dp"
+        android:layout_marginEnd="44dp"
+        android:background="@drawable/image_corner"
+        android:hint="  Password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/Go"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/nic"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.416"
+        app:passwordToggleEnabled="true" />
+
+    <TextView
+        android:id="@+id/signup"
+        android:layout_width="152dp"
+        android:layout_height="31dp"
+        android:layout_marginStart="152dp"
+        android:text="Don't Have Account ?"
+        android:textColor="#000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Go"
+        app:layout_constraintVertical_bias="0.251" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="87dp"
+        android:layout_height="44dp"
+        android:background="@drawable/image_corner"
+
+        android:backgroundTint="#FFA5A5"
+        android:text="Sign Up"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/signup"
+        app:layout_constraintTop_toBottomOf="@+id/Go"
+        app:layout_constraintVertical_bias="0.212" />
+
+    <EditText
+        android:id="@+id/nic"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="258dp"
+        android:layout_marginEnd="44dp"
+        android:background="@drawable/image_corner"
+        android:hint="  NIC"
+        app:layout_constraintBottom_toTopOf="@+id/pwd"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:passwordToggleEnabled="true" />
+</androidx.constraintlayout.widget.ConstraintLayout>

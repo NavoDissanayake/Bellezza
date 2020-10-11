@@ -131,7 +131,7 @@ public class AddFace extends AppCompatActivity {
         final AlertDialog alertDialog = dialogBuilder.create();
         alertDialog.show();
 
-        buttonUpdate.setOnClickListener(new View.OnClickListener() {
+                buttonUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name = AddName.getText().toString().trim();
