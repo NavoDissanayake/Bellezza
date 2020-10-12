@@ -37,6 +37,14 @@ public class AdminLogin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_adminlogin);
 
+        //add back button
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //action bar
+        setTitle("Admin Login");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         //add activity
         Button butn = (Button)findViewById(R.id.butn);
         butn.setOnClickListener(new View.OnClickListener() {

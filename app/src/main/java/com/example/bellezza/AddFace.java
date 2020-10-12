@@ -188,7 +188,7 @@ public class AddFace extends AppCompatActivity {
         String brands= spinnerBrands.getSelectedItem().toString();
         String desc =AddDesc.getText().toString().trim();
         String price =AddPrice.getText().toString().trim();
-        String date =AddPrice.getText().toString().trim();
+        String date =AddDate.getText().toString().trim();
 
         //checking
         if (!TextUtils.isEmpty(name)){

@@ -28,6 +28,15 @@ public class AdminReg extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_reg);
+
+        //add back button
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //action bar
+        setTitle("Admin Register Page");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
 //add activity
         Button button = (Button) findViewById(R.id.loging);
         button.setOnClickListener(new View.OnClickListener() {
@@ -88,17 +97,24 @@ public class AdminReg extends AppCompatActivity {
 
 
 //checking
-        if (!TextUtils.isEmpty(name)) {
+        if (isEmail(Ademail) == false) {
+
+
+            Ademail.setError("Enter valid email!");
+
 
             //getting the unique id using push().getKey() method
             //it create Id As a primary key
             String id = databaseReference.push().getKey();
 
             //creating
-            Administrator administrator = new Administrator(id, name, email, phone, pwd,nic,cpwd);
+            Administrator administrator = new Administrator(id, name, email, phone, pwd, nic, cpwd);
 
             //saving
             databaseReference.child(id).setValue(administrator);
+        }
+        if (!TextUtils.isEmpty(name)) {
+
 
             //displaying Success toast
             Toast.makeText(this, "Account Created Successfully", Toast.LENGTH_SHORT).show();
@@ -106,42 +122,11 @@ public class AdminReg extends AppCompatActivity {
 
         }
 
-        if (isEmail(Ademail) == false) {
-            Ademail.setError("Enter valid email!");
-        }
-        if(isEmpty(Adpass))
-        {
-            Adpass.setError("Enter your password.");
-        }
-
-        if(isEmpty(Adconpass))
-        {
-           Adconpass.setError("Enter your confirmation password");
-
-            if (!Adconpass.equals(Adpass))
-            {
-                Toast.makeText(AdminReg.this, "Password do not match", Toast.LENGTH_SHORT).show();
-            }
-        }
-
         else {
 
-            loadingBar.setTitle("Creating New Account");
-            loadingBar.setMessage("Please wait while we are creating account for you.");
-            loadingBar.show();
-            Task task = null;
-            if(task.isSuccessful())
-            {
-                Toast.makeText(AdminReg.this, "You have successfully signed up", Toast.LENGTH_SHORT).show();
-                finish();
-            }
-            else
-                {
-                    Toast.makeText(AdminReg.this, "Error occured, please try again.", Toast.LENGTH_SHORT).show();
-                }
-                loadingBar.dismiss();
+            Toast.makeText(AdminReg.this, "Enter Valid Name", Toast.LENGTH_SHORT).show();
 
         }
+
     }
 }
-

@@ -48,8 +48,6 @@ public class Administrator {
         return phone;
     }
 
-
-
     public String getPassword() {
         return password;
     }
