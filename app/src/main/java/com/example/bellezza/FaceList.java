@@ -37,6 +37,7 @@ public class FaceList extends ArrayAdapter {
         TextView textViewBrand = (TextView) listViewItem.findViewById(R.id.textViewBrand);
 
 
+
         Face face= faceList.get(position);
 
         textViewName.setText(face.getFaceName());
