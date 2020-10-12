@@ -95,36 +95,56 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+
     <EditText
         android:id="@+id/pass"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="394dp"
         android:layout_marginEnd="32dp"
+        android:layout_marginBottom="19dp"
         android:background="@drawable/image_corner"
         android:ems="10"
         android:hint="   Enter Password"
         android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/sinup"
+        app:layout_constraintBottom_toTopOf="@+id/confpass"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="1.0" />
+
+    <EditText
+        android:id="@+id/confpass"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:background="@drawable/image_corner"
+        android:ems="10"
+        android:hint="  Confirm Password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/sinup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.459"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.983"
+        tools:ignore="DuplicateIds" />
 
     <Button
         android:id="@+id/sinup"
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="470dp"
-        android:layout_marginBottom="211dp"
+        android:layout_width="214dp"
+        android:layout_height="66dp"
+        android:layout_marginStart="38dp"
+        android:layout_marginTop="521dp"
+        android:layout_marginBottom="136dp"
         android:background="@drawable/image_corner"
         android:backgroundTint="#000"
+        android:onClick="register"
         android:text="Register"
         android:textColor="#fff"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintEnd_toStartOf="@+id/loging"
+        app:layout_constraintHorizontal_bias="0.117"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -141,10 +161,10 @@
         android:text="Log in"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.977"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.055" />
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
