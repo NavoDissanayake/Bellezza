@@ -73,7 +73,7 @@
         app:layout_constraintBottom_toTopOf="@+id/butn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/nic"
+        app:layout_constraintStart_toStartOf="@+id/Email"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:passwordToggleEnabled="true" />
@@ -108,7 +108,7 @@
         app:layout_constraintVertical_bias="0.212" />
 
     <EditText
-        android:id="@+id/nic"
+        android:id="@+id/Email"
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginStart="17dp"

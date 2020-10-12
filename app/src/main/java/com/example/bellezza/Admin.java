@@ -24,7 +24,7 @@ public class Admin extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         //action bar
-        setTitle("Back");
+        setTitle("Admin Profile");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
 

@@ -49,6 +49,18 @@ public class AdminLogin extends AppCompatActivity {
                 Toast.makeText(AdminLogin.this, "Loading...", Toast.LENGTH_SHORT).show();
             }
         });
+        //add activity
+        Button go = (Button)findViewById(R.id.button);
+        go.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent8 = new Intent(AdminLogin.this ,AdminReg.class);
+                startActivity(intent8);
+
+                //Add Toast
+                Toast.makeText(AdminLogin.this, "Loading...", Toast.LENGTH_SHORT).show();
+            }
+        });
 
     }
 }

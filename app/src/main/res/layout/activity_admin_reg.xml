@@ -12,16 +12,15 @@
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="146dp"
-        android:layout_marginTop="91dp"
-        android:layout_marginEnd="174dp"
-        android:layout_marginBottom="602dp"
+        android:layout_marginStart="151dp"
+        android:layout_marginTop="71dp"
+        android:layout_marginEnd="169dp"
         android:fontFamily="@font/aladin"
         android:text="SIGN UP"
         android:textColor="#000"
         android:textSize="30sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -32,16 +31,14 @@
         android:id="@+id/name"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="205dp"
-        android:layout_marginEnd="33dp"
+        android:layout_marginTop="128dp"
         android:background="@drawable/image_corner"
         android:ems="10"
         android:hint="   Enter Your Name"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/nic"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.459"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -51,24 +48,24 @@
         android:layout_width="350dp"
         android:layout_height="50dp"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="226dp"
+        android:layout_marginTop="199dp"
         android:layout_marginEnd="33dp"
         android:background="@drawable/image_corner"
         android:ems="10"
+
         android:hint=" Enter Your NIC"
-        android:inputType="none"
-        app:layout_constraintBottom_toTopOf="@+id/phone"
+        app:layout_constraintBottom_toTopOf="@+id/Email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.393" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
-        android:id="@+id/nic"
+        android:id="@+id/Email"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginTop="305dp"
+        android:layout_marginTop="264dp"
         android:layout_marginEnd="33dp"
         android:background="@drawable/image_corner"
         android:ems="10"
@@ -79,13 +76,13 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.729" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/phone"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginTop="370dp"
+        android:layout_marginTop="330dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/image_corner"
         android:ems="10"
@@ -96,13 +93,13 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.627" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <EditText
         android:id="@+id/pass"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginTop="442dp"
+        android:layout_marginTop="400dp"
         android:layout_marginEnd="32dp"
         android:background="@drawable/image_corner"
         android:ems="10"
@@ -110,24 +107,24 @@
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/sinup"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.965"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
         android:id="@+id/sinup"
         android:layout_width="350dp"
         android:layout_height="50dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="525dp"
-        android:layout_marginEnd="33dp"
+        android:layout_marginTop="470dp"
+        android:layout_marginBottom="211dp"
         android:background="@drawable/image_corner"
         android:backgroundTint="#000"
         android:text="Register"
         android:textColor="#fff"
-        app:layout_constraintBottom_toTopOf="@+id/loging"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -136,16 +133,18 @@
         android:id="@+id/loging"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="602dp"
-        android:layout_marginBottom="82dp"
+        android:layout_marginStart="263dp"
+        android:layout_marginTop="539dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="136dp"
         android:background="@drawable/image_corner"
         android:text="Log in"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/sinup"
-        app:layout_constraintHorizontal_bias="0.893"
-        app:layout_constraintStart_toStartOf="@+id/sinup"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.977"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.055" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

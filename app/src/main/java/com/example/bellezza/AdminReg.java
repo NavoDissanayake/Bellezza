@@ -2,6 +2,7 @@ package com.example.bellezza;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -24,7 +25,18 @@ public class AdminReg extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_reg);
+//add activity
+        Button button = (Button)findViewById(R.id.loging);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent9 = new Intent(AdminReg.this ,AdminLogin.class);
+                startActivity(intent9);
 
+                //Add Toast
+                Toast.makeText(AdminReg.this, "Loading...", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
 
@@ -33,9 +45,9 @@ public class AdminReg extends AppCompatActivity {
 
 
         Adname = (EditText) findViewById(R.id.name);
-        Ademail = (EditText) findViewById(R.id.nic);
+        Ademail = (EditText) findViewById(R.id.Email);
         Adphone=(EditText) findViewById(R.id.phone);
-        Adnic=(EditText) findViewById(R.id.nic);
+        Adnic=(EditText) findViewById(R.id.Email);
         Adpass=(EditText) findViewById(R.id.pass);
        sinup = (Button)findViewById(R.id.sinup);
 
