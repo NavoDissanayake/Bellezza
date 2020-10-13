@@ -66,6 +66,9 @@ public class DeliveryActivity extends AppCompatActivity {
         });
     }
 
+
+
+    //check the entered details
     private void Check(){
 
         Cname = name2.getText().toString();

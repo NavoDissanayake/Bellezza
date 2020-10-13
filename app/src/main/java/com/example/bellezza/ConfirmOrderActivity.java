@@ -44,6 +44,8 @@ public class ConfirmOrderActivity extends AppCompatActivity {
         // totalAmount = getIntent().getStringExtra("Total Price");
         //Toast.makeText(this,"Total Price = "+totalAmount+"LKR",Toast.LENGTH_SHORT);
 
+
+
         //action bar
         setTitle("Confirm Order");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

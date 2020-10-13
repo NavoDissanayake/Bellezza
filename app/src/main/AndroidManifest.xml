@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.bellezza">
 
     <application
@@ -13,13 +14,17 @@
 
 
         <activity
-            android:name="com.example.bellezza.ConfirmOrderActivity">
+            android:name="com.example.bellezza.ConfirmOrderActivity"
+
+            android:parentActivityName="com.example.bellezza.ConfirmDetailsActivity">
 
 
         </activity>
         <activity
             android:name="com.example.bellezza.ConfirmDetailsActivity"
-         >
+
+            android:parentActivityName="com.example.bellezza.DeliveryActivity">
+
 
 
         </activity>

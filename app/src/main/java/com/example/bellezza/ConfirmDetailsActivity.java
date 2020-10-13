@@ -90,6 +90,10 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
             }
         });
 
+
+
+
+
         //next button
         Confirmbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,47 +106,9 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
 
 
 
-/*
-       //update details
-        updtebutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
 
 
-                DatabaseReference updRef = FirebaseDatabase.getInstance().getReference().child("Delivery");
-                updRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.hasChild("996450325V")){
-                            try{
-                                deliver.setName(name3.getText().toString().trim());
-                                deliver.setPhone(phone3.getText().toString().trim());
-                                deliver.setAddress(address3.getText().toString().trim());
-                                deliver.setCity(city3.getText().toString().trim());
-
-                                DeliveryRef = FirebaseDatabase.getInstance().getReference().child("Delivery").child("996450325V");
-                                DeliveryRef.setValue(deliver);
-                                //Feedback to the user via a Toast
-                                Toast.makeText(getApplicationContext(),"Data Updated Successfully",Toast.LENGTH_SHORT).show();
-                            }
-                            catch(NumberFormatException e){
-                                Toast.makeText(getApplicationContext(),"Invalid Contact Number",Toast.LENGTH_SHORT).show();
-                            }
-                        }
-                        else
-                            Toast.makeText(getApplicationContext(),"No Source to Update", Toast.LENGTH_SHORT).show();
-                    }
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-                    }
-                });
-            }
-        });
-
-
-
- */
         //click update button
         updtebutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -154,6 +120,7 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
         });
 
 
+        //click delete button
         delbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -164,37 +131,6 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
         });
 
 
-
-/*
-        //delete details
-        delbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                DatabaseReference delRef = FirebaseDatabase.getInstance().getReference().child("Delivery");
-                delRef.addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                        if(dataSnapshot.hasChildren()){
-
-                            DeliveryRef = FirebaseDatabase.getInstance().getReference().child("Delivery").child("996450325V");
-                            DeliveryRef.removeValue();
-                           // clearControls();
-                            Toast.makeText(getApplicationContext(),"Data Deleted Successfully",Toast.LENGTH_SHORT).show();
-                        }
-                        else
-                            Toast.makeText(getApplicationContext(),"No Source to Delete", Toast.LENGTH_SHORT).show();
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError databaseError) {
-
-                    }
-                });
-            }
-        });
-
-
- */
 
 
     }
@@ -257,7 +193,7 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
 
 
 
-
+    //delete the details with alert
     private void onDeleteDetailsClick(){
 
 
@@ -276,6 +212,7 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
                             DeliveryRef.removeValue();
                             clearControls();
                             Toast.makeText(getApplicationContext(),"Data Deleted Successfully",Toast.LENGTH_SHORT).show();
+                            viewprevious();
                         }
                         else
                             Toast.makeText(getApplicationContext(),"No Source to Delete", Toast.LENGTH_SHORT).show();
@@ -309,6 +246,15 @@ public class ConfirmDetailsActivity extends AppCompatActivity {
 
     }
 
+
+    private  void viewprevious(){
+
+        Intent i = new Intent(ConfirmDetailsActivity.this, DeliveryActivity.class);
+
+        startActivity(i);
+
+
+    }
 }
 
 
